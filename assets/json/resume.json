@@ -1,0 +1,245 @@
+{
+  "basics": {
+    "name": "Sheikh Tanvir Ahmed",
+    "label": "Undergraduate Researcher & Developer",
+    "image": "",
+    "email": "shkhtanvirahmed@gmail.com",
+    "phone": "+8801643631514",
+    "url": "https://github.com/ahvir",
+    "summary": "Passionate Computer Science student specializing in AI, machine learning, and full-stack development. Skilled in building intelligent systems, automation tools, and scalable applications integrating NLP and deep learning models.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Dhaka",
+      "countryCode": "BD",
+      "region": "Bangladesh"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "ahvir",
+        "url": "https://github.com/ahvir"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "shkhtanvirahmed",
+        "url": "https://www.linkedin.com/in/shkhtanvirahmed/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "United International University",
+      "position": "Undergraduate Teaching Assistant",
+      "url": "https://www.uiu.ac.bd/",
+      "startDate": "2024-11-01",
+      "endDate": "2025-07-01",
+      "summary": "Assisted faculty in course delivery, student support, and evaluation of assignments for undergraduate courses.",
+      "highlights": [
+        "Ensured smooth class operations by providing academic and logistical assistance.",
+        "Guided students with coursework and conceptual understanding.",
+        "Evaluated student submissions and contributed to assessment rubrics."
+      ]
+    },
+    {
+      "name": "United International University",
+      "position": "Undergraduate Grader",
+      "url": "https://www.uiu.ac.bd/",
+      "startDate": "2023-10-01",
+      "endDate": "2024-01-01",
+      "summary": "Evaluated student assignments and provided grading feedback for coursework.",
+      "highlights": ["Maintained academic integrity and consistency across grading standards."]
+    }
+  ],
+  "education": [
+    {
+      "institution": "United International University",
+      "location": "Dhaka, Bangladesh",
+      "url": "https://www.uiu.ac.bd/",
+      "area": "Computer Science and Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2022-01-01",
+      "endDate": "2026-12-31",
+      "score": "3.99/4.00 (Ongoing)",
+      "courses": [
+        "Data Structures & Algorithms",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "System Analysis and Design",
+        "Database Management System",
+        "Web Programming",
+        "Software Engineering"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Autonomous Car Parking System",
+      "summary": "Developed a reinforcement learning-based self-driving car simulation integrated with a real-world Arduino vehicle via REST APIs.",
+      "highlights": [
+        "Built and trained an RL agent for autonomous parking in Unity.",
+        "Integrated simulation control with hardware deployment.",
+        "Awarded 3rd Runner-Up among 100+ teams at UIU Project Show (Summer 2024)."
+      ],
+      "startDate": "2024-07-01",
+      "endDate": "2024-07-31",
+      "url": "https://github.com/ahvir"
+    },
+    {
+      "name": "OptiTask - Personal Management System",
+      "summary": "Developed an AI-driven task management platform with emotion-aware chatbot support, smart task automation, and real-time collaboration.",
+      "highlights": [
+        "Integrated Gemini API with Stanford NLP for emotion-based chatbot interaction.",
+        "Implemented real-time collaboration using React, Node.js, and Socket.io.",
+        "Won 1st Place (Poster Category) among 150+ teams at UIU Fall Project Show 2024."
+      ],
+      "startDate": "2025-01-01",
+      "endDate": "2025-01-31",
+      "url": "https://github.com/ahvir"
+    },
+    {
+      "name": "VoteChain - Blockchain Based Voting System",
+      "summary": "Building a decentralized voting system using smart contracts for secure and transparent elections.",
+      "highlights": [
+        "Developed wallet-based authentication with MetaMask.",
+        "Implemented real-time vote validation with Solidity and custom APIs.",
+        "Used React, Next.js, TypeScript, and Web3.js for frontend and blockchain integration."
+      ],
+      "startDate": "2025-06-01",
+      "endDate": "2025-07-01",
+      "url": "https://github.com/ahvir"
+    },
+    {
+      "name": "EngReji - AI Powered Learning Platform",
+      "summary": "Created an AI platform enabling rural Bangladeshi students to improve spoken English via real-time speech analysis and feedback.",
+      "highlights": [
+        "Built scalable Python backend with speech analysis using open-source AI models.",
+        "Designed frontend with TypeScript and Tailwind CSS.",
+        "Recognized as Finalist (AI Category) at Bangladesh Blockchain Olympiad 2025.",
+        "Received Honorable Mention and shortlisted at JavaAIFest (TheraBD)."
+      ],
+      "startDate": "2025-09-01",
+      "endDate": "2025-10-01",
+      "url": "https://github.com/ahvir"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Talentpool Scholarship",
+      "date": "2018-01-01",
+      "awarder": "Government of Bangladesh",
+      "url": "",
+      "summary": "Received Talentpool Scholarship based on board examination performance."
+    },
+    {
+      "title": "Result-Based Scholarships (9x)",
+      "date": "2022-01-01",
+      "awarder": "United International University",
+      "url": "https://www.uiu.ac.bd/",
+      "summary": "Awarded multiple merit-based scholarships for academic excellence during undergraduate studies."
+    },
+    {
+      "title": "3rd Runner-Up, UIU CSE Project Show (Summer 2024)",
+      "date": "2024-07-01",
+      "awarder": "United International University",
+      "url": "",
+      "summary": "Recognized for the Autonomous Car Parking System project."
+    },
+    {
+      "title": "Champion (Poster Category), UIU CSE Project Show (Fall 2024)",
+      "date": "2024-12-01",
+      "awarder": "United International University",
+      "url": "",
+      "summary": "Awarded 1st place for OptiTask - Personal Management System project."
+    },
+    {
+      "title": "Finalist & Honorable Mention, AI Category, Bangladesh Blockchain Olympiad 2025",
+      "date": "2025-08-01",
+      "awarder": "Bangladesh Blockchain Olympiad Committee",
+      "url": "",
+      "summary": "Recognized for EngReji - AI Powered Learning Platform project."
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming",
+      "level": "Advanced",
+      "icon": "fa-solid fa-code",
+      "keywords": ["C", "C++", "Go", "Python", "Java", "MASM", "TypeScript", "JavaScript"]
+    },
+    {
+      "name": "Web & Full Stack Development",
+      "level": "Advanced",
+      "icon": "fa-solid fa-globe",
+      "keywords": ["React", "Next.js", "Tailwind CSS", "Node.js", "HTML", "CSS", "Figma", "SQL", "Git"]
+    },
+    {
+      "name": "Software Testing",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-bug",
+      "keywords": ["Manual Testing", "SDLC", "STLC", "Test Case Design", "Bug Reporting (Jira)"]
+    },
+    {
+      "name": "Blockchain & Smart Contracts",
+      "level": "Intermediate",
+      "icon": "fa-solid fa-link",
+      "keywords": ["Solidity", "MetaMask", "Web3.js"]
+    },
+    {
+      "name": "AI/ML & Tools",
+      "level": "Advanced",
+      "icon": "fa-solid fa-brain",
+      "keywords": ["Scikit-learn", "TensorFlow", "Gemini API", "Stanford NLP", "OpenAI APIs"]
+    },
+    {
+      "name": "Concepts",
+      "level": "Advanced",
+      "icon": "fa-solid fa-lightbulb",
+      "keywords": [
+        "Retrieval Augmented Generation (RAG)",
+        "Data Structures & Algorithms",
+        "Machine Learning",
+        "Deep Learning",
+        "API Integration",
+        "CRM Logic",
+        "Automation Workflows"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Bengali",
+      "fluency": "Native speaker",
+      "icon": "fa-solid fa-language"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": "fa-solid fa-language"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Artificial Intelligence & NLP",
+      "icon": "fa-solid fa-robot",
+      "keywords": ["Large Language Models", "NLP", "Deep Learning", "AI Applications", "Speech Analysis", "Automation"]
+    },
+    {
+      "name": "Competitive Programming",
+      "icon": "fa-solid fa-laptop-code",
+      "keywords": ["Codeforces", "LeetCode", "AtCoder", "Algorithmic Problem Solving"]
+    },
+    {
+      "name": "Research & Mentorship",
+      "icon": "fa-solid fa-flask",
+      "keywords": ["LLMs", "Machine Learning", "Education", "Research Assistance"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Available upon request",
+      "icon": "fa-solid fa-user",
+      "reference": "Professional and academic references available upon request."
+    }
+  ]
+}
