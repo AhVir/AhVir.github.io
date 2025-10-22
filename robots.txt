@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://AhVir.github.io/al-folio/sitemap.xml
+Sitemap: https://AhVir.github.io/sitemap.xml
