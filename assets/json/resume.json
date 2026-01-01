@@ -24,19 +24,51 @@
         "network": "LinkedIn",
         "username": "shkhtanvirahmed",
         "url": "https://www.linkedin.com/in/shkhtanvirahmed/"
+      },
+      {
+        "network": "Portfolio",
+        "username": "ahvir",
+        "url": "https://ahvir.github.io"
       }
     ]
   },
   "work": [
     {
+      "name": "Southeast University",
+      "position": "Research Assistant",
+      "url": "",
+      "startDate": "2026-01-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "TriModal AI Lab",
+      "position": "Student Researcher",
+      "url": "",
+      "startDate": "2025-07-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Qatar Computing Research Institute",
+      "position": "Research Assistant",
+      "url": "",
+      "startDate": "2025-06-01",
+      "endDate": "",
+      "summary": "",
+      "highlights": []
+    },
+    {
       "name": "United International University",
       "position": "Undergraduate Teaching Assistant",
       "url": "https://www.uiu.ac.bd/",
       "startDate": "2024-11-01",
-      "endDate": "2025-07-01",
-      "summary": "Assisted faculty in course delivery, student support, and evaluation of assignments for undergraduate courses.",
+      "endDate": "",
+      "summary": "Assist faculty in ensuring smooth class operations. Support students with course-related issues. Assess students based on their assignments and tasks.",
       "highlights": [
-        "Ensured smooth class operations by providing academic and logistical assistance.",
+        "Assisted faculty in course delivery and student support.",
         "Guided students with coursework and conceptual understanding.",
         "Evaluated student submissions and contributed to assessment rubrics."
       ]
@@ -47,8 +79,10 @@
       "url": "https://www.uiu.ac.bd/",
       "startDate": "2023-10-01",
       "endDate": "2024-01-01",
-      "summary": "Evaluated student assignments and provided grading feedback for coursework.",
-      "highlights": ["Maintained academic integrity and consistency across grading standards."]
+      "summary": "Assessing students based on their assignments.",
+      "highlights": [
+        "Maintained academic integrity and consistency across grading standards."
+      ]
     }
   ],
   "education": [
@@ -58,9 +92,9 @@
       "url": "https://www.uiu.ac.bd/",
       "area": "Computer Science and Engineering",
       "studyType": "Bachelor",
-      "startDate": "2022-01-01",
-      "endDate": "2026-12-31",
-      "score": "3.99/4.00 (Ongoing)",
+      "startDate": "2022-10-01",
+      "endDate": "",
+      "score": "3.98/4.00 (After 3 Years, Ongoing)",
       "courses": [
         "Data Structures & Algorithms",
         "Artificial Intelligence",
@@ -75,11 +109,11 @@
   "projects": [
     {
       "name": "Autonomous Car Parking System",
-      "summary": "Developed a reinforcement learning-based self-driving car simulation integrated with a real-world Arduino vehicle via REST APIs.",
+      "summary": "Built a reinforcement learning-based self-driving car simulation in Unity and deployed it to a real-world Arduino vehicle via custom REST APIs.",
       "highlights": [
-        "Built and trained an RL agent for autonomous parking in Unity.",
+        "Trained an RL agent to perform autonomous parking tasks.",
         "Integrated simulation control with hardware deployment.",
-        "Awarded 3rd Runner-Up among 100+ teams at UIU Project Show (Summer 2024)."
+        "Awarded 3rd runner-up among 100+ teams at UIU Project Show, Summer 2024."
       ],
       "startDate": "2024-07-01",
       "endDate": "2024-07-31",
@@ -87,11 +121,11 @@
     },
     {
       "name": "OptiTask - Personal Management System",
-      "summary": "Developed an AI-driven task management platform with emotion-aware chatbot support, smart task automation, and real-time collaboration.",
+      "summary": "Developed a task automation and emotion-aware productivity app with group chat, smart task assignment, and AI-driven support.",
       "highlights": [
-        "Integrated Gemini API with Stanford NLP for emotion-based chatbot interaction.",
+        "Integrated a ChatBot using the Gemini API with Stanford NLP for user emotion analysis and personalized responses.",
         "Implemented real-time collaboration using React, Node.js, and Socket.io.",
-        "Won 1st Place (Poster Category) among 150+ teams at UIU Fall Project Show 2024."
+        "Won 1st place (Poster Category) out of 150+ teams at UIU Fall Project Show 2024."
       ],
       "startDate": "2025-01-01",
       "endDate": "2025-01-31",
@@ -99,11 +133,11 @@
     },
     {
       "name": "VoteChain - Blockchain Based Voting System",
-      "summary": "Building a decentralized voting system using smart contracts for secure and transparent elections.",
+      "summary": "Building a decentralized voting platform with wallet authentication, real-time voting logic, and secure smart contract execution.",
       "highlights": [
         "Developed wallet-based authentication with MetaMask.",
         "Implemented real-time vote validation with Solidity and custom APIs.",
-        "Used React, Next.js, TypeScript, and Web3.js for frontend and blockchain integration."
+        "Using React, Next.js, TypeScript, and Web3.js for frontend and blockchain integration."
       ],
       "startDate": "2025-06-01",
       "endDate": "2025-07-01",
@@ -111,16 +145,41 @@
     },
     {
       "name": "EngReji - AI Powered Learning Platform",
-      "summary": "Created an AI platform enabling rural Bangladeshi students to improve spoken English via real-time speech analysis and feedback.",
+      "summary": "Developed a learning platform that empowers rural Bangladeshi students to improve spoken English through real-time AI feedback on pronunciation and fluency.",
       "highlights": [
-        "Built scalable Python backend with speech analysis using open-source AI models.",
-        "Designed frontend with TypeScript and Tailwind CSS.",
-        "Recognized as Finalist (AI Category) at Bangladesh Blockchain Olympiad 2025.",
-        "Received Honorable Mention and shortlisted at JavaAIFest (TheraBD)."
+        "Designed the frontend with TypeScript & Tailwind CSS and built a scalable Python backend integrated with advanced open-source AI models and APIs for speech analysis.",
+        "Performed functionality and regression testing during development to ensure consistent performance across modules.",
+        "Achieved National and International recognition: Finalist in Bangladesh Blockchain Olympiad 2025 (AI Category), as well as Honorable Mention, and shortlisted at JavaAIFest (powered by TherapBD)."
       ],
       "startDate": "2025-09-01",
       "endDate": "2025-10-01",
       "url": "https://github.com/ahvir"
+    }
+  ],
+  "activities": [
+    {
+      "name": "Competitive Programming",
+      "description": "Solved 700+ problems on platforms like Codeforces, LeetCode, and AtCoder; passionate about competitive programming and algorithmic problem solving."
+    },
+    {
+      "name": "International Representation",
+      "description": "Nominated to represent Bangladesh on IDSOL (International Data Science Olympiad) 2025."
+    },
+    {
+      "name": "Programming Contest Participation",
+      "description": "Represented UIU in the CSE Fest 2025 Inter-University Programming Contest (IUPC)."
+    },
+    {
+      "name": "Mentorship",
+      "description": "Mentor junior students on core CS topics, including DSA, algorithms, and machine learning."
+    },
+    {
+      "name": "Research Activities",
+      "description": "Active in research on Large Language Models (LLMs) and deep learning, exploring their application in automation and AI tools."
+    },
+    {
+      "name": "AI/ML Enthusiast",
+      "description": "Enthusiast of real-world AI, NLP, and deep learning systems, regularly experiments with projects involving GPT, Gemini, and Stanford NLP."
     }
   ],
   "awards": [
@@ -165,31 +224,66 @@
       "name": "Programming",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": ["C", "C++", "Go", "Python", "Java", "MASM", "TypeScript", "JavaScript"]
+      "keywords": [
+        "C",
+        "C++",
+        "Go",
+        "Python",
+        "Java",
+        "MASM",
+        "TypeScript",
+        "JavaScript"
+      ]
     },
     {
       "name": "Web & Full Stack Development",
       "level": "Advanced",
       "icon": "fa-solid fa-globe",
-      "keywords": ["React", "Next.js", "Tailwind CSS", "Node.js", "HTML", "CSS", "Figma", "SQL", "Git"]
+      "keywords": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "Figma",
+        "SQL",
+        "Git"
+      ]
     },
     {
       "name": "Software Testing",
       "level": "Intermediate",
       "icon": "fa-solid fa-bug",
-      "keywords": ["Manual Testing", "SDLC", "STLC", "Test Case Design", "Bug Reporting (Jira)"]
+      "keywords": [
+        "Manual Testing",
+        "SDLC",
+        "STLC",
+        "Test Case Design",
+        "Bug Reporting (Jira)"
+      ]
     },
     {
       "name": "Blockchain & Smart Contracts",
       "level": "Intermediate",
       "icon": "fa-solid fa-link",
-      "keywords": ["Solidity", "MetaMask", "Web3.js"]
+      "keywords": [
+        "Solidity",
+        "MetaMask",
+        "Web3.js"
+      ]
     },
     {
       "name": "AI/ML & Tools",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["Scikit-learn", "TensorFlow", "Gemini API", "Stanford NLP", "OpenAI APIs"]
+      "keywords": [
+        "Scikit-learn",
+        "TensorFlow",
+        "Gemini API",
+        "Stanford NLP",
+        "OpenAI APIs"
+      ]
     },
     {
       "name": "Concepts",
@@ -214,7 +308,7 @@
     },
     {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "Efficient",
       "icon": "fa-solid fa-language"
     }
   ],
@@ -222,17 +316,34 @@
     {
       "name": "Artificial Intelligence & NLP",
       "icon": "fa-solid fa-robot",
-      "keywords": ["Large Language Models", "NLP", "Deep Learning", "AI Applications", "Speech Analysis", "Automation"]
+      "keywords": [
+        "Large Language Models",
+        "NLP",
+        "Deep Learning",
+        "AI Applications",
+        "Speech Analysis",
+        "Automation"
+      ]
     },
     {
       "name": "Competitive Programming",
       "icon": "fa-solid fa-laptop-code",
-      "keywords": ["Codeforces", "LeetCode", "AtCoder", "Algorithmic Problem Solving"]
+      "keywords": [
+        "Codeforces",
+        "LeetCode",
+        "AtCoder",
+        "Algorithmic Problem Solving"
+      ]
     },
     {
       "name": "Research & Mentorship",
       "icon": "fa-solid fa-flask",
-      "keywords": ["LLMs", "Machine Learning", "Education", "Research Assistance"]
+      "keywords": [
+        "LLMs",
+        "Machine Learning",
+        "Education",
+        "Research Assistance"
+      ]
     }
   ],
   "references": [
