@@ -34,31 +34,17 @@
   },
   "work": [
     {
-      "name": "Southeast University",
-      "position": "Research Assistant",
-      "url": "",
-      "startDate": "2026-01-01",
-      "endDate": "",
-      "summary": "",
-      "highlights": []
-    },
-    {
       "name": "TriModal AI Lab",
       "position": "Student Researcher",
-      "url": "",
+      "url": "https://trimodal-ai.github.io/",
       "startDate": "2025-07-01",
       "endDate": "",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "name": "Qatar Computing Research Institute",
-      "position": "Research Assistant",
-      "url": "",
-      "startDate": "2025-06-01",
-      "endDate": "",
-      "summary": "",
-      "highlights": []
+      "summary": "Conducting research on multimodal AI systems, video understanding, and temporal reasoning under faculty supervision.",
+      "highlights": [
+        "Researching video understanding and temporal action recognition in multimodal contexts.",
+        "Exploring LLM integration with visual data for educational applications.",
+        "Developing privacy-preserving approaches for AI model deployment."
+      ]
     },
     {
       "name": "United International University",
@@ -66,10 +52,10 @@
       "url": "https://www.uiu.ac.bd/",
       "startDate": "2024-11-01",
       "endDate": "",
-      "summary": "Assist faculty in ensuring smooth class operations. Support students with course-related issues. Assess students based on their assignments and tasks.",
+      "summary": "Supporting faculty in course delivery while mentoring students in core computer science topics.",
       "highlights": [
-        "Assisted faculty in course delivery and student support.",
-        "Guided students with coursework and conceptual understanding.",
+        "Mentored students in Data Structures & Algorithms, Machine Learning, and Software Engineering.",
+        "Guided students with coursework, conceptual understanding, and project development.",
         "Evaluated student submissions and contributed to assessment rubrics."
       ]
     },
@@ -79,8 +65,11 @@
       "url": "https://www.uiu.ac.bd/",
       "startDate": "2023-10-01",
       "endDate": "2024-01-01",
-      "summary": "Assessing students based on their assignments.",
-      "highlights": ["Maintained academic integrity and consistency across grading standards."]
+      "summary": "Assessed student assignments while maintaining academic integrity and grading consistency.",
+      "highlights": [
+        "Maintained academic integrity and consistency across grading standards.",
+        "Provided constructive feedback to support student learning."
+      ]
     }
   ],
   "education": [
@@ -89,11 +78,14 @@
       "location": "Dhaka, Bangladesh",
       "url": "https://www.uiu.ac.bd/",
       "area": "Computer Science and Engineering",
-      "studyType": "Bachelor",
+      "studyType": "Bachelor of Science",
       "startDate": "2022-10-01",
       "endDate": "",
-      "score": "3.98/4.00 (After 3 Years, Ongoing)",
+      "score": "3.98/4.00 (After 3.5 Years)",
       "courses": [
+        "<strong>CGPA: 3.98/4.00</strong> (After 3.5 Years, Ongoing)",
+        "<strong>Scholarships:</strong> Awarded 9x Result-Based Scholarships for academic excellence",
+        "<strong>Relevant Coursework:</strong>",
         "Data Structures & Algorithms",
         "Artificial Intelligence",
         "Machine Learning",
@@ -106,51 +98,51 @@
   ],
   "projects": [
     {
-      "name": "Autonomous Car Parking System",
-      "summary": "Built a reinforcement learning-based self-driving car simulation in Unity and deployed it to a real-world Arduino vehicle via custom REST APIs.",
+      "name": "EngReji - AI Powered Learning Platform",
+      "summary": "Research-driven AI learning platform empowering rural Bangladeshi students to improve spoken English through real-time multimodal feedback on pronunciation and fluency.",
       "highlights": [
-        "Trained an RL agent to perform autonomous parking tasks.",
-        "Integrated simulation control with hardware deployment.",
-        "Awarded 3rd runner-up among 100+ teams at UIU Project Show, Summer 2024."
+        "Designed multimodal AI feedback system integrating ASR (Automatic Speech Recognition), NLP, and TTS for comprehensive speech analysis.",
+        "Built scalable Python backend with advanced open-source AI models and APIs for real-time pronunciation assessment.",
+        "<strong>National Recognition:</strong> Finalist in Bangladesh Blockchain Olympiad 2025 (AI Category), Honorable Mention, and shortlisted at JavaAIFest (powered by TherapBD)."
       ],
-      "startDate": "2024-07-01",
-      "endDate": "2024-07-31",
+      "startDate": "2025-09-01",
+      "endDate": "2025-10-01",
       "url": "https://github.com/ahvir"
     },
     {
-      "name": "OptiTask - Personal Management System",
-      "summary": "Developed a task automation and emotion-aware productivity app with group chat, smart task assignment, and AI-driven support.",
+      "name": "OptiTask - Emotion-Aware Productivity System",
+      "summary": "Task management platform leveraging NLP-driven emotion analysis and AI chatbot for personalized, empathetic user support.",
       "highlights": [
-        "Integrated a ChatBot using the Gemini API with Stanford NLP for user emotion analysis and personalized responses.",
-        "Implemented real-time collaboration using React, Node.js, and Socket.io.",
-        "Won 1st place (Poster Category) out of 150+ teams at UIU Fall Project Show 2024."
+        "Integrated Gemini API with Stanford NLP for <strong>user emotion analysis</strong> and context-aware, empathetic responses.",
+        "Implemented real-time collaboration using React, Node.js, and Socket.io for seamless team coordination.",
+        "<strong>Won 1st place (Poster Category)</strong> out of 150+ teams at UIU Fall Project Show 2024."
       ],
       "startDate": "2025-01-01",
       "endDate": "2025-01-31",
       "url": "https://github.com/ahvir"
     },
     {
-      "name": "VoteChain - Blockchain Based Voting System",
-      "summary": "Building a decentralized voting platform with wallet authentication, real-time voting logic, and secure smart contract execution.",
+      "name": "Autonomous Car Parking System",
+      "summary": "Reinforcement Learning-based autonomous vehicle system bridging simulation and hardware deployment for self-parking capabilities.",
       "highlights": [
-        "Developed wallet-based authentication with MetaMask.",
-        "Implemented real-time vote validation with Solidity and custom APIs.",
-        "Using React, Next.js, TypeScript, and Web3.js for frontend and blockchain integration."
+        "Trained <strong>RL agent using Deep Q-Learning</strong> to perform autonomous parking tasks in Unity simulation.",
+        "Integrated simulation control with real-world Arduino vehicle deployment via custom REST APIs.",
+        "<strong>Awarded 3rd runner-up</strong> among 100+ teams at UIU Project Show, Summer 2024."
       ],
-      "startDate": "2025-06-01",
-      "endDate": "2025-07-01",
+      "startDate": "2024-07-01",
+      "endDate": "2024-07-31",
       "url": "https://github.com/ahvir"
     },
     {
-      "name": "EngReji - AI Powered Learning Platform",
-      "summary": "Developed a learning platform that empowers rural Bangladeshi students to improve spoken English through real-time AI feedback on pronunciation and fluency.",
+      "name": "VoteChain - Decentralized Voting Platform",
+      "summary": "Blockchain-based voting system exploring decentralized architecture, wallet authentication, and secure smart contract execution.",
       "highlights": [
-        "Designed the frontend with TypeScript & Tailwind CSS and built a scalable Python backend integrated with advanced open-source AI models and APIs for speech analysis.",
-        "Performed functionality and regression testing during development to ensure consistent performance across modules.",
-        "Achieved National and International recognition: Finalist in Bangladesh Blockchain Olympiad 2025 (AI Category), as well as Honorable Mention, and shortlisted at JavaAIFest (powered by TherapBD)."
+        "Developed decentralized voting platform with MetaMask wallet-based authentication.",
+        "Implemented smart contract logic using Solidity for transparent and immutable vote recording.",
+        "Built with React, Next.js, TypeScript, and Web3.js for seamless blockchain integration."
       ],
-      "startDate": "2025-09-01",
-      "endDate": "2025-10-01",
+      "startDate": "2025-06-01",
+      "endDate": "2025-07-01",
       "url": "https://github.com/ahvir"
     }
   ],
@@ -222,31 +214,66 @@
       "name": "Programming",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": ["C", "C++", "Go", "Python", "Java", "MASM", "TypeScript", "JavaScript"]
+      "keywords": [
+        "C",
+        "C++",
+        "Go",
+        "Python",
+        "Java",
+        "MASM",
+        "TypeScript",
+        "JavaScript"
+      ]
     },
     {
       "name": "Web & Full Stack Development",
       "level": "Advanced",
       "icon": "fa-solid fa-globe",
-      "keywords": ["React", "Next.js", "Tailwind CSS", "Node.js", "HTML", "CSS", "Figma", "SQL", "Git"]
+      "keywords": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "Figma",
+        "SQL",
+        "Git"
+      ]
     },
     {
       "name": "Software Testing",
       "level": "Intermediate",
       "icon": "fa-solid fa-bug",
-      "keywords": ["Manual Testing", "SDLC", "STLC", "Test Case Design", "Bug Reporting (Jira)"]
+      "keywords": [
+        "Manual Testing",
+        "SDLC",
+        "STLC",
+        "Test Case Design",
+        "Bug Reporting (Jira)"
+      ]
     },
     {
       "name": "Blockchain & Smart Contracts",
       "level": "Intermediate",
       "icon": "fa-solid fa-link",
-      "keywords": ["Solidity", "MetaMask", "Web3.js"]
+      "keywords": [
+        "Solidity",
+        "MetaMask",
+        "Web3.js"
+      ]
     },
     {
       "name": "AI/ML & Tools",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["Scikit-learn", "TensorFlow", "Gemini API", "Stanford NLP", "OpenAI APIs"]
+      "keywords": [
+        "Scikit-learn",
+        "TensorFlow",
+        "Gemini API",
+        "Stanford NLP",
+        "OpenAI APIs"
+      ]
     },
     {
       "name": "Concepts",
@@ -279,17 +306,34 @@
     {
       "name": "Artificial Intelligence & NLP",
       "icon": "fa-solid fa-robot",
-      "keywords": ["Large Language Models", "NLP", "Deep Learning", "AI Applications", "Speech Analysis", "Automation"]
+      "keywords": [
+        "Large Language Models",
+        "NLP",
+        "Deep Learning",
+        "AI Applications",
+        "Speech Analysis",
+        "Automation"
+      ]
     },
     {
       "name": "Competitive Programming",
       "icon": "fa-solid fa-laptop-code",
-      "keywords": ["Codeforces", "LeetCode", "AtCoder", "Algorithmic Problem Solving"]
+      "keywords": [
+        "Codeforces",
+        "LeetCode",
+        "AtCoder",
+        "Algorithmic Problem Solving"
+      ]
     },
     {
       "name": "Research & Mentorship",
       "icon": "fa-solid fa-flask",
-      "keywords": ["LLMs", "Machine Learning", "Education", "Research Assistance"]
+      "keywords": [
+        "LLMs",
+        "Machine Learning",
+        "Education",
+        "Research Assistance"
+      ]
     }
   ],
   "references": [

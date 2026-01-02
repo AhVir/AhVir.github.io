@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Undergraduate Student | United International University
 
 profile:
   align: right
@@ -25,12 +25,9 @@ latest_posts:
   limit: 3
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am an undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research in **Video Understanding**, **Large Language Models (LLMs)**, **Human-Computer Interaction (HCI)**, and **AI Privacy**. Currently, I serve as a **Student Researcher** at **[TriModal AI Lab](https://sites.google.com/view/adnanarefeen/trimodal-ai-lab?authuser=0)** and an **Undergraduate Teaching Assistant** at UIU. My work bridges the gap between algorithmic theory and real-world AI applications. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges. 
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
-
+<div style="clear: both;"></div>
 <!-- News Section -->
 <section id="news" class="scroll-section">
   <h2>News</h2>
@@ -41,32 +38,42 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <section id="projects" class="scroll-section">
   <h2>Projects</h2>
   <div class="projects">
-    {% assign project_count = site.projects | size %}
-    {% if project_count > 0 %}
-      {% if site.enable_project_categories %}
-        <!-- Display categorized projects -->
-        {% assign project_categories = "work,fun" | split: "," %}
-        {% for category in project_categories %}
-          <a id="projects-{{ category }}" href=".#projects-{{ category }}">
-            <h3 class="category">{{ category }}</h3>
-          </a>
-          {% assign categorized_projects = site.projects | where: "category", category %}
-          {% assign sorted_projects = categorized_projects | sort: "importance" %}
-          <div class="row row-cols-1 row-cols-md-3">
-            {% for project in sorted_projects %}
-              {% include projects.liquid %}
-            {% endfor %}
+    {% if site.data.resume.projects and site.data.resume.projects.size > 0 %}
+      <div class="row">
+        {% for project in site.data.resume.projects %}
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.summary }}</p>
+                {% if project.highlights and project.highlights.size > 0 %}
+                  <ul class="small">
+                    {% for highlight in project.highlights %}
+                      <li>{{ highlight }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if project.url %}
+                  <a href="{{ project.url }}" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> View Project
+                  </a>
+                {% endif %}
+              </div>
+              {% if project.startDate %}
+                <div class="card-footer text-muted small">
+                  {% assign startDate = project.startDate | date: "%b %Y" %}
+                  {% if project.endDate and project.endDate != "" %}
+                    {% assign endDate = project.endDate | date: "%b %Y" %}
+                    {{ startDate }} - {{ endDate }}
+                  {% else %}
+                    {{ startDate }} - Present
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
           </div>
         {% endfor %}
-      {% else %}
-        <!-- Display projects without categories -->
-        {% assign sorted_projects = site.projects | sort: "importance" %}
-        <div class="row row-cols-1 row-cols-md-3">
-          {% for project in sorted_projects %}
-            {% include projects.liquid %}
-          {% endfor %}
-        </div>
-      {% endif %}
+      </div>
     {% else %}
       <p class="text-muted">Coming soon...</p>
     {% endif %}
@@ -97,7 +104,11 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
       {% include bib_search.liquid %}
       {{ bib_output }}
     {% else %}
-      <p class="text-muted">Coming soon...</p>
+      <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem;">
+        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
+          <strong>Multiple manuscripts in preparation</strong> regarding <em>Video Understanding</em> and <em>LLM Privacy</em>. Please check back soon for updates.
+        </p>
+      </div>
     {% endif %}
   </div>
 </section>
@@ -106,10 +117,9 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <section id="experiences" class="scroll-section">
   <h2>Experiences</h2>
   <div class="experiences-section">
-    {% assign work_entry = site.data.resume | where_exp: "item", "item[0] == 'work'" | first %}
-    {% if work_entry and work_entry[1].size > 0 %}
+    {% if site.data.resume.work and site.data.resume.work.size > 0 %}
       <ul class="card-text font-weight-light list-group list-group-flush">
-        {% assign work_items = work_entry[1] | sort: 'startDate' | reverse %}
+        {% assign work_items = site.data.resume.work | sort: 'startDate' | reverse %}
         {% for content in work_items %}
           <li class="list-group-item">
             <div class="row">
@@ -170,10 +180,9 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <section id="education" class="scroll-section">
   <h2>Education</h2>
   <div class="education-section">
-    {% assign education_entry = site.data.resume | where_exp: "item", "item[0] == 'education'" | first %}
-    {% if education_entry and education_entry[1].size > 0 %}
+    {% if site.data.resume.education and site.data.resume.education.size > 0 %}
       <ul class="card-text font-weight-light list-group list-group-flush">
-        {% assign education_items = education_entry[1] | sort: 'startDate' | reverse %}
+        {% assign education_items = site.data.resume.education | sort: 'startDate' | reverse %}
         {% for content in education_items %}
           <li class="list-group-item">
             <div class="row">
