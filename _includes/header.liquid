@@ -99,24 +99,66 @@
                 </li>
               {% else %}
                 {% assign parent_link = p.permalink | remove: 'index.html' %}
-                <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
-                  {%- if p.permalink contains '://' -%}
-                    {%- assign url = p.permalink -%}
-                  {%- elsif p.permalink contains '/blog/' -%}
-                    {%- assign url = '/blog/' -%}
-                  {%- else -%}
-                    {%- assign url = p.url -%}
-                  {%- endif %}
-                  <a class="nav-link" href="{{ url | relative_url }}">
-                    {{- p.title }}
-                    {% if page.url contains p.url %}
-                      <span class="sr-only">(current)</span>
-                    {% endif %}
-                  </a>
-                </li>
+                {%- comment -%} Convert main section links to anchor links on home page {%- endcomment -%}
+                {% if p.title == 'news' %}
+                  <li class="nav-item nav-anchor-link" data-section="news">
+                    <a class="nav-link" href="{{ '/' | relative_url }}#news">
+                      {{- p.title }}
+                    </a>
+                  </li>
+                {% elsif p.title == 'publications' %}
+                  <li class="nav-item nav-anchor-link" data-section="publications">
+                    <a class="nav-link" href="{{ '/' | relative_url }}#publications">
+                      {{- p.title }}
+                    </a>
+                  </li>
+                {% elsif p.title == 'projects' %}
+                  <li class="nav-item nav-anchor-link" data-section="projects">
+                    <a class="nav-link" href="{{ '/' | relative_url }}#projects">
+                      {{- p.title }}
+                    </a>
+                  </li>
+                {% elsif p.title == 'cv' %}
+                  <li class="nav-item nav-anchor-link" data-section="cv">
+                    <a class="nav-link" href="{{ '/' | relative_url }}#cv">
+                      {{- p.title }}
+                    </a>
+                  </li>
+                {% elsif p.title == 'teaching' or p.title == 'books' %}
+                  {%- comment -%} Skip Teaching and Books pages {%- endcomment -%}
+                {% else %}
+                  {%- comment -%} Keep other pages as regular links {%- endcomment -%}
+                  <li class="nav-item {% if page.url contains parent_link %}active{% endif %}">
+                    {%- if p.permalink contains '://' -%}
+                      {%- assign url = p.permalink -%}
+                    {%- elsif p.permalink contains '/blog/' -%}
+                      {%- assign url = '/blog/' -%}
+                    {%- else -%}
+                      {%- assign url = p.url -%}
+                    {%- endif %}
+                    <a class="nav-link" href="{{ url | relative_url }}">
+                      {{- p.title }}
+                      {% if page.url contains p.url %}
+                        <span class="sr-only">(current)</span>
+                      {% endif %}
+                    </a>
+                  </li>
+                {% endif %}
               {% endif %}
             {% endif %}
           {% endfor %}
+          
+          {%- comment -%} Add new section links for Experiences and Education {%- endcomment -%}
+          <li class="nav-item nav-anchor-link" data-section="experiences">
+            <a class="nav-link" href="{{ '/' | relative_url }}#experiences">
+              experiences
+            </a>
+          </li>
+          <li class="nav-item nav-anchor-link" data-section="education">
+            <a class="nav-link" href="{{ '/' | relative_url }}#education">
+              education
+            </a>
+          </li>
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
