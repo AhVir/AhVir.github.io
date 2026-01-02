@@ -157,8 +157,8 @@ I am an undergraduate student at **[United International University (UIU)](https
                 <h6 class="title font-weight-bold ml-1 ml-md-4">
                   <a href="{{ content.url }}">{{ content.position }}</a>
                 </h6>
-                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.name }}</h6>
-                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.summary }}</h6>
+                <h6 class="ml-1 ml-md-4 company-name">{{ content.name }}</h6>
+                <h6 class="ml-1 ml-md-4 position-summary">{{ content.summary }}</h6>
                 <ul class="items">
                   {% for item in content.highlights %}
                     <li>
@@ -222,10 +222,10 @@ I am an undergraduate student at **[United International University (UIU)](https
                 <h6 class="title font-weight-bold ml-1 ml-md-4">
                   <a href="{{ content.url }}">{{ content.studyType }}</a>
                 </h6>
-                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.institution }}</h6>
-                <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ content.area }}</h6>
+                <h6 class="ml-1 ml-md-4 institution-name">{{ content.institution }}</h6>
+                <h6 class="ml-1 ml-md-4 study-area">{{ content.area }}</h6>
                 {% if content.score %}
-                  <h6 class="ml-1 ml-md-4" style="font-size: 0.9rem">
+                  <h6 class="ml-1 ml-md-4 cgpa-info">
                     <strong>CGPA:</strong> {{ content.score }}
                   </h6>
                 {% endif %}
