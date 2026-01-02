@@ -20,7 +20,8 @@ html {
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   flex-wrap: wrap;
 
   .profile-btn {
@@ -164,7 +165,8 @@ html {
   border: 1px solid var(--global-divider-color);
   border-radius: 0.5rem;
   background-color: var(--global-card-bg-color);
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
+  clear: both; // Ensure it appears below floated elements
 
   // Smooth scrolling on touch devices
   -webkit-overflow-scrolling: touch;
@@ -451,15 +453,17 @@ ul.task-list input[type="checkbox"] {
 
 .profile.float-right {
   margin-left: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .profile.float-left {
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 25%;
 
     .address {
       p {
@@ -720,8 +724,8 @@ footer.fixed-bottom {
 
   .container {
     color: var(--global-footer-text-color);
-    padding-top: 9px;
-    padding-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     text-align: center;
   }
 
@@ -737,8 +741,8 @@ footer.fixed-bottom {
 
 footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 0.9rem;
 
   .container {
@@ -1160,6 +1164,35 @@ html.transition *:after {
 
 // Extra Markdown style (post Customization)
 .post {
+
+  // Tighter spacing for sections in about page
+  article {
+    h2 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    section {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+
+      .text-muted {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+        margin: 0;
+      }
+    }
+
+    .clearfix {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .post-header {
+    margin-bottom: 1rem;
+  }
+
   .post-meta {
     color: var(--global-text-color-light);
     font-size: 0.875rem;
