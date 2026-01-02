@@ -81,21 +81,6 @@ I am an undergraduate student at **[United International University (UIU)](https
   </div>
 </section>
 
-<!-- Repositories Section -->
-<section id="repositories" class="scroll-section">
-  <h2>Repositories</h2>
-  
-  {% if site.data.repositories.github_repos %}
-    <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-      {% for repo in site.data.repositories.github_repos %}
-        {% include repository/repo.liquid repository=repo %}
-      {% endfor %}
-    </div>
-  {% else %}
-    <p class="text-muted">Coming soon...</p>
-  {% endif %}
-</section>
-
 <!-- Publications Section -->
 <section id="publications" class="scroll-section">
   <h2>Publications</h2>
