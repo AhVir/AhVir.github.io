@@ -25,78 +25,24 @@ latest_posts:
   limit: 3
 ---
 
-I am an undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research in **Video Understanding**, **Large Language Models (LLMs)**, **Human-Computer Interaction (HCI)**, and **AI Privacy**. Currently, I serve as a **Student Researcher** at **[TriModal AI Lab](https://sites.google.com/view/adnanarefeen/trimodal-ai-lab?authuser=0)** and an **Undergraduate Teaching Assistant** at UIU. My work bridges the gap between algorithmic theory and real-world AI applications. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges.
+I am an undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research in **Video Understanding**, **Large Language Models (LLMs)**, **Human-Computer Interaction (HCI)**, and **LLM Privacy**. Currently, I serve as a **Student Researcher** at **[TriModal AI Lab](https://sites.google.com/view/adnanarefeen/trimodal-ai-lab?authuser=0)** and an **Undergraduate Teaching Assistant** at UIU. My work bridges the gap between algorithmic theory and real-world AI applications. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges.
+
+<div class="research-interests-section" style="margin-top: 1.5rem; margin-bottom: 1rem;">
+  <div style="height: 2px; width: 60px; background: linear-gradient(to right, var(--global-theme-color), transparent); margin-bottom: .50rem; border-radius: 1px;"></div>
+  <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--global-text-color);">Research Interests</h3>
+  <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0; line-height: 1.8;">
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Video Understanding</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Large Language Models (LLMs) & Multimodal AI</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Human-Computer Interaction (HCI)</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">LLM Privacy & Security</li>
+  </ul>
+</div>
 
 <div style="clear: both;"></div>
-
 <!-- News Section -->
 <section id="news" class="scroll-section">
   <h2>News</h2>
   {% include news.liquid %}
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="scroll-section">
-  <h2>Projects</h2>
-  <div class="projects">
-    {% if site.data.resume.projects and site.data.resume.projects.size > 0 %}
-      <div class="row">
-        {% for project in site.data.resume.projects %}
-          <div class="col-md-6 mb-4">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">{{ project.name }}</h5>
-                <p class="card-text">{{ project.summary }}</p>
-                {% if project.highlights and project.highlights.size > 0 %}
-                  <ul class="small">
-                    {% for highlight in project.highlights %}
-                      <li>{{ highlight }}</li>
-                    {% endfor %}
-                  </ul>
-                {% endif %}
-                {% if project.url %}
-                  <a href="{{ project.url }}" class="btn btn-sm btn-primary" target="_blank" rel="noopener noreferrer">
-                    <i class="fa-brands fa-github"></i> View Project
-                  </a>
-                {% endif %}
-              </div>
-              {% if project.startDate %}
-                <div class="card-footer text-muted small">
-                  {% assign startDate = project.startDate | date: "%b %Y" %}
-                  {% if project.endDate and project.endDate != "" %}
-                    {% assign endDate = project.endDate | date: "%b %Y" %}
-                    {{ startDate }} - {{ endDate }}
-                  {% else %}
-                    {{ startDate }} - Present
-                  {% endif %}
-                </div>
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    {% else %}
-      <p class="text-muted">Coming soon...</p>
-    {% endif %}
-  </div>
-</section>
-
-<!-- Publications Section -->
-<section id="publications" class="scroll-section">
-  <h2>Publications</h2>
-  <div class="publications">
-    {% capture bib_output %}{% bibliography %}{% endcapture %}
-    {% if bib_output contains 'bibliography' or bib_output.size > 50 %}
-      {% include bib_search.liquid %}
-      {{ bib_output }}
-    {% else %}
-      <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem;">
-        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-          <strong>Multiple manuscripts in preparation</strong> regarding <em>Video Understanding</em> and <em>LLM Privacy</em>. Please check back soon for updates.
-        </p>
-      </div>
-    {% endif %}
-  </div>
 </section>
 
 <!-- Experiences Section -->
@@ -162,6 +108,60 @@ I am an undergraduate student at **[United International University (UIU)](https
   </div>
 </section>
 
+<!-- Publications Section -->
+<section id="publications" class="scroll-section">
+  <h2>Publications</h2>
+  <div class="publications">
+    {% capture bib_output %}{% bibliography %}{% endcapture %}
+    {% if bib_output contains 'bibliography' or bib_output.size > 50 %}
+      {% include bib_search.liquid %}
+      {{ bib_output }}
+    {% else %}
+      <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem;">
+        <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
+          <strong>Multiple manuscripts in preparation</strong> regarding <em>Video Understanding</em> and <em>LLM Privacy</em>. Please check back soon for updates.
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="scroll-section">
+  <h2>Projects</h2>
+  <div class="projects">
+    {% if site.data.resume.projects and site.data.resume.projects.size > 0 %}
+      <div class="row">
+        {% for project in site.data.resume.projects %}
+          <div class="col-md-6 mb-4">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">{{ project.name }}</h5>
+                <p class="card-text">{{ project.summary }}</p>
+                {% if project.highlights and project.highlights.size > 0 %}
+                  <ul class="small">
+                    {% for highlight in project.highlights %}
+                      <li>{{ highlight }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                {% if project.url %}
+                  <a href="{{ project.url }}" class="project-github-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i>
+                    <span>View on GitHub</span>
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="text-muted">Coming soon...</p>
+    {% endif %}
+  </div>
+</section>
+
 <!-- Education Section -->
 <section id="education" class="scroll-section">
   <h2>Education</h2>
@@ -210,18 +210,23 @@ I am an undergraduate student at **[United International University (UIU)](https
                 <h6 class="ml-1 ml-md-4 institution-name">{{ content.institution }}</h6>
                 <h6 class="ml-1 ml-md-4 study-area">{{ content.area }}</h6>
                 {% if content.score %}
-                  <h6 class="ml-1 ml-md-4 cgpa-info">
-                    <strong>CGPA:</strong> {{ content.score }}
-                  </h6>
+                  <div class="ml-1 ml-md-4 mt-2 mb-2">
+                    <p class="cgpa-info mb-1">
+                      <strong>CGPA:</strong> {{ content.score }}
+                    </p>
+                  </div>
                 {% endif %}
                 {% if content.courses and content.courses.size > 0 %}
-                  <ul class="items">
-                    {% for item in content.courses %}
-                      <li>
-                        <span class="item">{{ item }}</span>
-                      </li>
-                    {% endfor %}
-                  </ul>
+                  <div class="ml-1 ml-md-4 mt-2">
+                    <p class="mb-2"><strong>Scholarships & Achievements:</strong></p>
+                    <p class="mb-3" style="color: var(--global-text-color); font-size: 0.9rem;">{{ content.courses[0] }}</p>
+                    <p class="mb-2"><strong>Relevant Coursework:</strong></p>
+                    <ul class="coursework-list" style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0;">
+                      {% for item in content.courses offset:1 %}
+                        <li style="color: var(--global-text-color); font-size: 0.9rem; margin-bottom: 0.25rem;">{{ item }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 {% endif %}
               </div>
             </div>
@@ -239,7 +244,7 @@ I am an undergraduate student at **[United International University (UIU)](https
   <h2>Curriculum Vitae</h2>
   <div class="cv-section">
     <p class="cv-download">
-      <a href="{{ '/assets/pdf/CV_Tanvir.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+      <a href="{{ '/assets/pdf/CV_Tanvir.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer" class="project-github-btn">
         <i class="ti ti-download"></i> Download Full CV (PDF)
       </a>
     </p>

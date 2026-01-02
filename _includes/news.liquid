@@ -4,7 +4,7 @@
       <table class="table table-sm table-borderless">
         {% for item in site.data.news %}
           <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <th scope="row">{{ item.date | date: '%b %d, %Y' }}</th>
             <td>
               {% if item.inline %}
                 {{ item.content | emojify }}
