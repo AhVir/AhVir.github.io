@@ -9,10 +9,7 @@ profile:
   # image: prof_pic.jpg
   image: tanvir.jpeg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  more_info: true # enables social icon buttons below profile picture
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -44,29 +41,34 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <section id="projects" class="scroll-section">
   <h2>Projects</h2>
   <div class="projects">
-    {% if site.enable_project_categories %}
-      <!-- Display categorized projects -->
-      {% assign project_categories = "work,fun" | split: "," %}
-      {% for category in project_categories %}
-        <a id="projects-{{ category }}" href=".#projects-{{ category }}">
-          <h3 class="category">{{ category }}</h3>
-        </a>
-        {% assign categorized_projects = site.projects | where: "category", category %}
-        {% assign sorted_projects = categorized_projects | sort: "importance" %}
+    {% assign project_count = site.projects | size %}
+    {% if project_count > 0 %}
+      {% if site.enable_project_categories %}
+        <!-- Display categorized projects -->
+        {% assign project_categories = "work,fun" | split: "," %}
+        {% for category in project_categories %}
+          <a id="projects-{{ category }}" href=".#projects-{{ category }}">
+            <h3 class="category">{{ category }}</h3>
+          </a>
+          {% assign categorized_projects = site.projects | where: "category", category %}
+          {% assign sorted_projects = categorized_projects | sort: "importance" %}
+          <div class="row row-cols-1 row-cols-md-3">
+            {% for project in sorted_projects %}
+              {% include projects.liquid %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      {% else %}
+        <!-- Display projects without categories -->
+        {% assign sorted_projects = site.projects | sort: "importance" %}
         <div class="row row-cols-1 row-cols-md-3">
           {% for project in sorted_projects %}
             {% include projects.liquid %}
           {% endfor %}
         </div>
-      {% endfor %}
+      {% endif %}
     {% else %}
-      <!-- Display projects without categories -->
-      {% assign sorted_projects = site.projects | sort: "importance" %}
-      <div class="row row-cols-1 row-cols-md-3">
-        {% for project in sorted_projects %}
-          {% include projects.liquid %}
-        {% endfor %}
-      </div>
+      <p class="text-muted">Coming soon...</p>
     {% endif %}
   </div>
 </section>
@@ -75,42 +77,28 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <section id="repositories" class="scroll-section">
   <h2>Repositories</h2>
   
-  {% if site.data.repositories.github_users %}
-    <h3>GitHub Users</h3>
-    <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-      {% for user in site.data.repositories.github_users %}
-        {% include repository/repo_user.liquid username=user %}
-      {% endfor %}
-    </div>
-
-    {% if site.repo_trophies.enabled %}
-      {% for user in site.data.repositories.github_users %}
-        {% if site.data.repositories.github_users.size > 1 %}
-          <h4>{{ user }}</h4>
-        {% endif %}
-        <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-          {% include repository/repo_trophies.liquid username=user %}
-        </div>
-      {% endfor %}
-    {% endif %}
-  {% endif %}
-
   {% if site.data.repositories.github_repos %}
-    <h3>GitHub Repositories</h3>
     <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
       {% for repo in site.data.repositories.github_repos %}
         {% include repository/repo.liquid repository=repo %}
       {% endfor %}
     </div>
+  {% else %}
+    <p class="text-muted">Coming soon...</p>
   {% endif %}
 </section>
 
 <!-- Publications Section -->
 <section id="publications" class="scroll-section">
   <h2>Publications</h2>
-  {% include bib_search.liquid %}
   <div class="publications">
-    {% bibliography %}
+    {% capture bib_output %}{% bibliography %}{% endcapture %}
+    {% if bib_output contains 'bibliography' or bib_output.size > 50 %}
+      {% include bib_search.liquid %}
+      {{ bib_output }}
+    {% else %}
+      <p class="text-muted">Coming soon...</p>
+    {% endif %}
   </div>
 </section>
 

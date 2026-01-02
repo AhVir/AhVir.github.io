@@ -14,6 +14,46 @@ html {
   padding-bottom: 3rem;
 }
 
+// Profile social icon buttons
+.profile-social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+
+  .profile-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--global-bg-color);
+    border: 2px solid var(--global-theme-color);
+    color: var(--global-theme-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+
+    i {
+      line-height: 1;
+    }
+
+    &:hover {
+      background-color: var(--global-theme-color);
+      color: var(--global-bg-color);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(var(--global-theme-color-rgb, 86, 166, 185), 0.3);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+    }
+  }
+}
+
 // Scrollable news container - small box style
 .news-scroll-container {
   max-height: 350px;
