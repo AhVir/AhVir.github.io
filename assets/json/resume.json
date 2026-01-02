@@ -81,11 +81,9 @@
       "studyType": "Bachelor of Science",
       "startDate": "2022-10-01",
       "endDate": "",
-      "score": "3.98/4.00 (After 3.5 Years)",
+      "score": "3.98/4.00 (After 3.5 Years, Ongoing)",
       "courses": [
-        "<strong>CGPA: 3.98/4.00</strong> (After 3.5 Years, Ongoing)",
-        "<strong>Scholarships:</strong> Awarded 9x Result-Based Scholarships for academic excellence",
-        "<strong>Relevant Coursework:</strong>",
+        "Awarded 9x Result-Based Scholarships for academic excellence",
         "Data Structures & Algorithms",
         "Artificial Intelligence",
         "Machine Learning",
@@ -214,31 +212,66 @@
       "name": "Programming",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": ["C", "C++", "Go", "Python", "Java", "MASM", "TypeScript", "JavaScript"]
+      "keywords": [
+        "C",
+        "C++",
+        "Go",
+        "Python",
+        "Java",
+        "MASM",
+        "TypeScript",
+        "JavaScript"
+      ]
     },
     {
       "name": "Web & Full Stack Development",
       "level": "Advanced",
       "icon": "fa-solid fa-globe",
-      "keywords": ["React", "Next.js", "Tailwind CSS", "Node.js", "HTML", "CSS", "Figma", "SQL", "Git"]
+      "keywords": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "Figma",
+        "SQL",
+        "Git"
+      ]
     },
     {
       "name": "Software Testing",
       "level": "Intermediate",
       "icon": "fa-solid fa-bug",
-      "keywords": ["Manual Testing", "SDLC", "STLC", "Test Case Design", "Bug Reporting (Jira)"]
+      "keywords": [
+        "Manual Testing",
+        "SDLC",
+        "STLC",
+        "Test Case Design",
+        "Bug Reporting (Jira)"
+      ]
     },
     {
       "name": "Blockchain & Smart Contracts",
       "level": "Intermediate",
       "icon": "fa-solid fa-link",
-      "keywords": ["Solidity", "MetaMask", "Web3.js"]
+      "keywords": [
+        "Solidity",
+        "MetaMask",
+        "Web3.js"
+      ]
     },
     {
       "name": "AI/ML & Tools",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["Scikit-learn", "TensorFlow", "Gemini API", "Stanford NLP", "OpenAI APIs"]
+      "keywords": [
+        "Scikit-learn",
+        "TensorFlow",
+        "Gemini API",
+        "Stanford NLP",
+        "OpenAI APIs"
+      ]
     },
     {
       "name": "Concepts",
@@ -271,17 +304,34 @@
     {
       "name": "Artificial Intelligence & NLP",
       "icon": "fa-solid fa-robot",
-      "keywords": ["Large Language Models", "NLP", "Deep Learning", "AI Applications", "Speech Analysis", "Automation"]
+      "keywords": [
+        "Large Language Models",
+        "NLP",
+        "Deep Learning",
+        "AI Applications",
+        "Speech Analysis",
+        "Automation"
+      ]
     },
     {
       "name": "Competitive Programming",
       "icon": "fa-solid fa-laptop-code",
-      "keywords": ["Codeforces", "LeetCode", "AtCoder", "Algorithmic Problem Solving"]
+      "keywords": [
+        "Codeforces",
+        "LeetCode",
+        "AtCoder",
+        "Algorithmic Problem Solving"
+      ]
     },
     {
       "name": "Research & Mentorship",
       "icon": "fa-solid fa-flask",
-      "keywords": ["LLMs", "Machine Learning", "Education", "Research Assistance"]
+      "keywords": [
+        "LLMs",
+        "Machine Learning",
+        "Education",
+        "Research Assistance"
+      ]
     }
   ],
   "references": [
