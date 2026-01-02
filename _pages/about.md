@@ -28,6 +28,7 @@ latest_posts:
 I am an undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research in **Video Understanding**, **Large Language Models (LLMs)**, **Human-Computer Interaction (HCI)**, and **AI Privacy**. Currently, I serve as a **Student Researcher** at **[TriModal AI Lab](https://sites.google.com/view/adnanarefeen/trimodal-ai-lab?authuser=0)** and an **Undergraduate Teaching Assistant** at UIU. My work bridges the gap between algorithmic theory and real-world AI applications. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges. 
 
 <div style="clear: both;"></div>
+
 <!-- News Section -->
 <section id="news" class="scroll-section">
   <h2>News</h2>
