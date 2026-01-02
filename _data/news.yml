@@ -1,0 +1,51 @@
+# News announcements
+# Add new entries at the top to maintain reverse chronological order (newest first)
+# 
+# Format:
+#   - date: YYYY-MM-DD HH:MM:SS TIMEZONE
+#     inline: true/false
+#     content: "Your announcement text (supports emojis and basic HTML)"
+#     title: "Optional - only for inline: false entries"
+#     url: "Optional - only for inline: false entries"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "testing testing,  testing!!! :sparkles: :smile:"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "testing testing, hucking testing!!! :sparkles: :smile:"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "Joined SEU as a Research Assistant! :sparkles: :smile:"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "Joined SEU as a Research Assistant! :sparkles: :smile:"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "Joined SEU as a Research Assistant! :sparkles: :smile:"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "Joined SEU as a Research Assistant! :sparkles: :smile:"
+
+- date: 2026-01-01 07:59:00-0400
+  inline: true
+  content: "Joined SEU as a Research Assistant! :sparkles: :smile:"
+
+- date: 2016-01-15 07:59:00-0400
+  inline: true
+  content: "A simple inline announcement with Markdown emoji! :sparkles: :smile:"
+
+- date: 2015-11-07 16:11:00-0400
+  inline: false
+  title: "A long announcement with details"
+  url: "/news/announcement_2/"
+  content: "Announcements and news can be much longer than just quick inline posts. In fact, they can have all the features available for the standard blog posts."
+
+- date: 2015-10-22 15:59:00-0400
+  inline: true
+  content: "A simple inline announcement."

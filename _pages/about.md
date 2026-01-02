@@ -14,7 +14,7 @@ profile:
     <p>123 your address street</p>
     <p>Your City, State 12345</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -23,7 +23,7 @@ announcements:
   limit: 50
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true
   limit: 3
 ---
@@ -71,16 +71,46 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
   </div>
 </section>
 
+<!-- Repositories Section -->
+<section id="repositories" class="scroll-section">
+  <h2>Repositories</h2>
+  
+  {% if site.data.repositories.github_users %}
+    <h3>GitHub Users</h3>
+    <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+      {% for user in site.data.repositories.github_users %}
+        {% include repository/repo_user.liquid username=user %}
+      {% endfor %}
+    </div>
+
+    {% if site.repo_trophies.enabled %}
+      {% for user in site.data.repositories.github_users %}
+        {% if site.data.repositories.github_users.size > 1 %}
+          <h4>{{ user }}</h4>
+        {% endif %}
+        <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+          {% include repository/repo_trophies.liquid username=user %}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+
+  {% if site.data.repositories.github_repos %}
+    <h3>GitHub Repositories</h3>
+    <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
+      {% for repo in site.data.repositories.github_repos %}
+        {% include repository/repo.liquid repository=repo %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
 <!-- Publications Section -->
 <section id="publications" class="scroll-section">
   <h2>Publications</h2>
   {% include bib_search.liquid %}
   <div class="publications">
-    {% if page.selected_papers %}
-      {% include selected_papers.liquid %}
-    {% else %}
-      {% bibliography %}
-    {% endif %}
+    {% bibliography %}
   </div>
 </section>
 
