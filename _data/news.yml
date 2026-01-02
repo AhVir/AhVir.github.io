@@ -1,6 +1,6 @@
 # News announcements
 # Add new entries at the top to maintain reverse chronological order (newest first)
-# 
+#
 # Format:
 #   - date: YYYY-MM-DD HH:MM:SS TIMEZONE
 #     inline: true/false
@@ -11,4 +11,3 @@
 - date: 2026-01-02 00:00:00-0400
   inline: true
   content: "Portfolio site launched! 🚀"
-

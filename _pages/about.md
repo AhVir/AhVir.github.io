@@ -250,4 +250,3 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
     </p>
   </div>
 </section>
-
