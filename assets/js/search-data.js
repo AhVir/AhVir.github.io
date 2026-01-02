@@ -88,7 +88,7 @@ ninja.data = [{
           title: 'testing testing, hucking testing!!! :sparkles: :smile:',
           description: "",
           section: "News",},{id: "news-testing-testing-testing-sparkles-smile",
-          title: 'testing testing,  testing!!! :sparkles: :smile:',
+          title: 'testing testing, testing!!! :sparkles: :smile:',
           description: "",
           section: "News",},{id: "news-joined-seu-as-a-research-assistant-sparkles-smile",
           title: 'Joined SEU as a Research Assistant! :sparkles: :smile:',
