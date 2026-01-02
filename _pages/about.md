@@ -248,7 +248,6 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
         <i class="ti ti-download"></i> Download Full CV (PDF)
       </a>
     </p>
-    <p>For a comprehensive overview of my academic background, research experience, publications, and skills, please download my full curriculum vitae above.</p>
   </div>
 </section>
 
