@@ -17,7 +17,8 @@ html {
 // Ensure News section clears floated profile
 #news.scroll-section {
   clear: both;
-  margin-top: 2rem;
+  margin-top: -0.5rem;
+  padding-top: 0;
 }
 
 // Profile social icon buttons
