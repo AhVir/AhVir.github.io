@@ -32,7 +32,7 @@ nav: false
 
 ## Counseling Hours for UGA Students
 
-Available for counseling during all non-class, non-UGA duty hours between **08:30 AM - 04:30 PM**.
+<!-- Available for counseling during all non-class, non-UGA duty hours between **08:30 AM - 04:30 PM**. -->
 
 ### Available Time Slots:
 
