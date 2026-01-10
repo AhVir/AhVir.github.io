@@ -25,7 +25,7 @@ nav: false
 
 ### Saturday
 
-- **11:10 AM - 01:50 PM**: UGA - ICS
+- **11:10 AM - 01:40 PM**: UGA - ICS
 - **02:00 PM - 04:30 PM**: UGA - DSA 01
 
 ---
