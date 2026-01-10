@@ -46,6 +46,7 @@ Feel free to reach out during these hours for any academic support or guidance!
 
 ## Contact Information
 
+- **Room**: 928-929 (Combined)
 - **Email**: [sahmed223191@bscse.uiu.ac.bd](mailto:sahmed223191@bscse.uiu.ac.bd)
 - **Phone**: +8801643631514
 
