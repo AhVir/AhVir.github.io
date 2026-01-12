@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /ch/
-title: Class Hours & Counseling
+title: Class Hours & Counseling - Fall 2025
 description: My class schedule, UGA duties, and counseling hours
 nav: false
 ---

@@ -44,42 +44,42 @@
         <ul class="navbar-nav ml-auto flex-nowrap">
           <!-- About -->
           <li class="nav-item">
-            <a class="nav-link" href="{{ '/' | relative_url }}"> about </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}"> About </a>
           </li>
 
           <!-- News -->
           <li class="nav-item nav-anchor-link" data-section="news">
-            <a class="nav-link" href="{{ '/' | relative_url }}#news"> news </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#news"> News </a>
           </li>
 
           <!-- Experiences -->
           <li class="nav-item nav-anchor-link" data-section="experiences">
-            <a class="nav-link" href="{{ '/' | relative_url }}#experiences"> experiences </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#experiences"> Experiences </a>
           </li>
 
           <!-- Publications -->
           <li class="nav-item nav-anchor-link" data-section="publications">
-            <a class="nav-link" href="{{ '/' | relative_url }}#publications"> publications </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#publications"> Publications </a>
           </li>
 
           <!-- Projects -->
           <li class="nav-item nav-anchor-link" data-section="projects">
-            <a class="nav-link" href="{{ '/' | relative_url }}#projects"> projects </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#projects"> Projects </a>
           </li>
 
           <!-- Education -->
           <li class="nav-item nav-anchor-link" data-section="education">
-            <a class="nav-link" href="{{ '/' | relative_url }}#education"> education </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#education"> Education </a>
           </li>
 
           <!-- CV -->
           <li class="nav-item nav-anchor-link" data-section="cv">
-            <a class="nav-link" href="{{ '/' | relative_url }}#cv"> cv </a>
+            <a class="nav-link" href="{{ '/' | relative_url }}#cv"> CV </a>
           </li>
 
           <!-- Student Counselling (UGA) -->
-          <li class="nav-item">
-            <a class="nav-link" href="{{ '/ch/' | relative_url }}"> counseling (uga) </a>
+          <li class="nav-item {% if page.permalink == '/ch/' %}active{% endif %}">
+            <a class="nav-link" href="{{ '/ch/' | relative_url }}"> Counseling (UGA) </a>
           </li>
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
