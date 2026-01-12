@@ -4,18 +4,18 @@
  * and highlights the corresponding navigation link
  */
 
-(function () {
+(function() {
   "use strict";
 
   // Only run on the home page
-  if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+  if(window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
     return;
   }
 
   // Configuration
   const config = {
     rootMargin: "-80px 0px -80px 0px", // Offset for fixed navbar
-    threshold: 0.2, // Trigger when 20% of section is visible
+    threshold: [0.1,0.3,0.5], // Multiple thresholds for better detection
   };
 
   // Get all sections with scroll-section class
@@ -32,7 +32,7 @@
    * @param {string} sectionId - ID of the active section
    */
   function updateActiveLink(sectionId) {
-    if (activeSection === sectionId) return;
+    if(activeSection === sectionId) return;
 
     activeSection = sectionId;
 
@@ -42,9 +42,9 @@
     });
 
     // Add active class to matching nav link
-    if (sectionId) {
+    if(sectionId) {
       const activeLink = document.querySelector(`.nav-anchor-link[data-section="${sectionId}"]`);
-      if (activeLink) {
+      if(activeLink) {
         activeLink.classList.add("active");
       }
     }
@@ -55,29 +55,47 @@
    * @param {IntersectionObserverEntry[]} entries
    */
   function handleIntersection(entries) {
-    // Find the section with highest intersection ratio
+    // Find the section with highest intersection ratio that is intersecting
     let maxRatio = 0;
     let topSection = null;
 
     entries.forEach((entry) => {
-      if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+      if(entry.isIntersecting && entry.intersectionRatio > maxRatio) {
         maxRatio = entry.intersectionRatio;
         topSection = entry.target.id;
       }
     });
 
-    // Update active link if we found a prominent section
-    if (topSection) {
+    // If no section is intersecting, find the one closest to viewport top
+    if(!topSection) {
+      let closestSection = null;
+      let closestDistance = Infinity;
+
+      entries.forEach((entry) => {
+        const distance = Math.abs(entry.boundingClientRect.top);
+        if(distance < closestDistance) {
+          closestDistance = distance;
+          closestSection = entry.target.id;
+        }
+      });
+
+      if(closestSection) {
+        topSection = closestSection;
+      }
+    }
+
+    // Update active link if we found a section
+    if(topSection) {
       updateActiveLink(topSection);
     }
   }
 
   // Create IntersectionObserver
-  const observer = new IntersectionObserver(handleIntersection, config);
+  const observer = new IntersectionObserver(handleIntersection,config);
 
   // Observe all sections
   sections.forEach((section) => {
-    if (section.id) {
+    if(section.id) {
       observer.observe(section);
     }
   });
@@ -87,16 +105,16 @@
    */
   navLinks.forEach((link) => {
     const anchor = link.querySelector("a");
-    if (anchor) {
-      anchor.addEventListener("click", function (e) {
+    if(anchor) {
+      anchor.addEventListener("click",function(e) {
         const href = this.getAttribute("href");
 
         // Only handle anchor links on the same page
-        if (href && href.includes("#")) {
+        if(href && href.includes("#")) {
           const targetId = href.split("#")[1];
           const targetSection = document.getElementById(targetId);
 
-          if (targetSection) {
+          if(targetSection) {
             e.preventDefault();
 
             // Smooth scroll to section
@@ -106,7 +124,7 @@
             });
 
             // Update URL without jumping
-            history.pushState(null, null, `#${targetId}`);
+            history.pushState(null,null,`#${targetId}`);
 
             // Update active link
             updateActiveLink(targetId);
@@ -121,11 +139,11 @@
    */
   function handleInitialHash() {
     const hash = window.location.hash;
-    if (hash) {
+    if(hash) {
       const targetId = hash.substring(1);
       const targetSection = document.getElementById(targetId);
 
-      if (targetSection) {
+      if(targetSection) {
         // Delay to ensure page is fully loaded
         setTimeout(() => {
           targetSection.scrollIntoView({
@@ -133,7 +151,7 @@
             block: "start",
           });
           updateActiveLink(targetId);
-        }, 100);
+        },100);
       }
     }
   }
@@ -145,20 +163,20 @@
     const scrollPosition = window.scrollY;
     const firstSection = sections[0];
 
-    if (firstSection && scrollPosition < firstSection.offsetTop - 100) {
+    if(firstSection && scrollPosition < firstSection.offsetTop - 100) {
       updateActiveLink(null);
 
       // Activate "about" link
       const aboutLink = document.querySelector('.nav-item[class*="about"]');
-      if (aboutLink) {
+      if(aboutLink) {
         aboutLink.classList.add("active");
       }
     }
   }
 
   // Initialize on page load
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
+  if(document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded",function() {
       handleInitialHash();
       handleTopScroll();
     });
@@ -171,10 +189,10 @@
   let scrollTimeout;
   window.addEventListener(
     "scroll",
-    function () {
+    function() {
       clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(handleTopScroll, 50);
+      scrollTimeout = setTimeout(handleTopScroll,50);
     },
-    { passive: true }
+    {passive: true}
   );
 })();
