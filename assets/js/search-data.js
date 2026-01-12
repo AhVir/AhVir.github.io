@@ -51,7 +51,14 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/blog/";
               },
-            },{id: "news-a-simple-inline-announcement",
+            },{id: "nav-student-counseling-uga",
+          title: "Student Counseling (UGA)",
+          description: "My class schedule, UGA duties, and counseling hours",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/ch/";
+          },
+        },{id: "news-a-simple-inline-announcement",
           title: 'A simple inline announcement.',
           description: "",
           section: "News",},{id: "news-a-long-announcement-with-details",
