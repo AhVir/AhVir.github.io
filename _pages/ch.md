@@ -1,9 +1,10 @@
 ---
 layout: page
 permalink: /ch/
-title: Class Hours & Counseling
+title: Student Counseling (UGA)
 description: My class schedule, UGA duties, and counseling hours
-nav: false
+nav: true
+nav_order: 9
 ---
 
 ## Class Schedule
