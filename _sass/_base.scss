@@ -662,8 +662,7 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-nav .nav-item .nav-link {
     color: var(--global-text-color);
-    transition: all 0.3s ease;
-    position: relative;
+    transition: color 0.3s ease;
 
     &:hover {
       color: var(--global-hover-color);
@@ -672,21 +671,7 @@ ul.task-list input[type="checkbox"] {
 
   .navbar-nav .nav-item.active > .nav-link {
     background-color: inherit;
-    font-weight: bolder;
     color: var(--global-theme-color);
-    text-shadow: 0 0 8px rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.4);
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      height: 2px;
-      background: var(--global-theme-color);
-      border-radius: 1px;
-    }
 
     &:hover {
       color: var(--global-hover-color);
@@ -696,21 +681,7 @@ ul.task-list input[type="checkbox"] {
   // Active state for nav-anchor-link items (scroll sections)
   .navbar-nav .nav-anchor-link.active > .nav-link {
     background-color: inherit;
-    font-weight: bolder;
     color: var(--global-theme-color);
-    text-shadow: 0 0 8px rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.4);
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80%;
-      height: 2px;
-      background: var(--global-theme-color);
-      border-radius: 1px;
-    }
   }
 
   .navbar-brand.social {
