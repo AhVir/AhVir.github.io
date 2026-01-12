@@ -34,19 +34,6 @@
   },
   "work": [
     {
-      "name": "TriModal AI Lab",
-      "position": "Student Researcher",
-      "url": "https://trimodal-ai.github.io/",
-      "startDate": "2025-07-01",
-      "endDate": "",
-      "summary": "Conducting research on multimodal AI systems, video understanding, and temporal reasoning under faculty supervision.",
-      "highlights": [
-        "Researching video understanding and temporal action recognition in multimodal contexts.",
-        "Exploring LLM integration with visual data for educational applications.",
-        "Developing privacy-preserving approaches for AI model deployment."
-      ]
-    },
-    {
       "name": "United International University",
       "position": "Undergraduate Teaching Assistant",
       "url": "https://www.uiu.ac.bd/",
