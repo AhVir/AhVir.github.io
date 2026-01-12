@@ -52,30 +52,48 @@
             </a>
           </li>
 
-          <!-- Projects -->
-          <li class="nav-item nav-anchor-link" data-section="projects">
-            <a class="nav-link" href="{{ '/' | relative_url }}#projects"> projects </a>
-          </li>
-
-          <!-- Publications -->
-          <li class="nav-item nav-anchor-link" data-section="publications">
-            <a class="nav-link" href="{{ '/' | relative_url }}#publications"> publications </a>
-          </li>
-
-          <!-- Experiences -->
-          <li class="nav-item nav-anchor-link" data-section="experiences">
-            <a class="nav-link" href="{{ '/' | relative_url }}#experiences"> experiences </a>
-          </li>
-
-          <!-- Education -->
-          <li class="nav-item nav-anchor-link" data-section="education">
-            <a class="nav-link" href="{{ '/' | relative_url }}#education"> education </a>
-          </li>
-
-          <!-- CV -->
-          <li class="nav-item nav-anchor-link" data-section="cv">
-            <a class="nav-link" href="{{ '/' | relative_url }}#cv"> cv </a>
-          </li>
+          <!-- Other pages -->
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for p in sorted_pages %}
+            {% if p.nav and p.permalink != '/' %}
+              {% if p.dropdown %}
+                <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {{ p.title }}
+                    {% if page.title == p.title %}
+                      <span class="sr-only">(current)</span>
+                    {% endif %}
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    {% for child in p.children %}
+                      {% if child.title == 'divider' %}
+                        <div class="dropdown-divider"></div>
+                      {% else %}
+                        <a class="dropdown-item" href="{{ child.permalink | relative_url }}">{{ child.title }}</a>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                </li>
+              {% else %}
+                <li class="nav-item {% if page.permalink == p.permalink %}active{% endif %}">
+                  <a class="nav-link" href="{{ p.permalink | relative_url }}">
+                    {{ p.title }}
+                    {% if page.permalink == p.permalink %}
+                      <span class="sr-only">(current)</span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
