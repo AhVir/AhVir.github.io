@@ -8,6 +8,10 @@
 #     title: "Optional - only for inline: false entries"
 #     url: "Optional - only for inline: false entries"
 
+- date: 2026-01-15 00:00:00-0400
+  inline: true
+  content: "Won <strong><a href='https://www.uphysicsc.com/2025_UPC_Results.pdf'>Bronze Medal</a></strong> at the <strong>University Physics Competition (UPC) 2025</strong>!"
+
 - date: 2025-12-20 00:00:00-0400
   inline: true
   content: "Nominated to represent Bangladesh at the <strong>International Data Science Olympiad (IDSOL) 2025</strong>!"
