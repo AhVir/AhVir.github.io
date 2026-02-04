@@ -7,6 +7,9 @@
 #     content: "Your announcement text (supports emojis and basic HTML)"
 #     title: "Optional - only for inline: false entries"
 #     url: "Optional - only for inline: false entries"
+- date: 2026-02-04 00:00:00-0400
+  inline: true
+  content: "Selected as a <strong><a href='https://qiskit.org/advocates/'>Qiskit Advocate</a></strong> in the <strong>IBM Qiskit Advocate Program</strong>!"
 
 - date: 2026-01-15 00:00:00-0400
   inline: true
