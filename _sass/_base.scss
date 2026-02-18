@@ -531,6 +531,7 @@ ul.task-list input[type="checkbox"] {
     background-color: transparent;
     color: var(--global-theme-color) !important;
     border-color: var(--global-theme-color);
+    text-decoration: none;
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
