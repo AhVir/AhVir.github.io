@@ -34,6 +34,19 @@
   },
   "work": [
     {
+      "name": "CRISiS Lab, Joint Centre for Disaster Research, Massey University",
+      "position": "Research Intern",
+      "url": "https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/",
+      "startDate": "2026-02",
+      "endDate": "",
+      "summary": "Selected for research internship at the Joint Centre for Disaster Research, working under Dr. Catalina Miranda on computational disaster resilience projects.",
+      "highlights": [
+        "Working with Dr. Catalina Miranda (Lecturer, JCDR) on numerical modelling of timber connectors for structural disaster resilience research.",
+        "Building and annotating sensor/digital datasets to support machine learning workflows in hazard analysis.",
+        "Developing computational models and data pipelines for analyzing disaster risk communication."
+      ]
+    },
+    {
       "name": "United International University",
       "position": "Undergraduate Teaching Assistant",
       "url": "https://www.uiu.ac.bd/",
@@ -70,7 +83,7 @@
       "endDate": "",
       "score": "3.99/4.00 (After 3.5 Years, Ongoing)",
       "courses": [
-        "Awarded 9x Result-Based Scholarships for academic excellence",
+        "Merit-based scholarships in all undergrad trimesters (10x)",
         "Data Structures & Algorithms",
         "Artificial Intelligence",
         "Machine Learning",
@@ -199,31 +212,66 @@
       "name": "Programming",
       "level": "Advanced",
       "icon": "fa-solid fa-code",
-      "keywords": ["C", "C++", "Go", "Python", "Java", "MASM", "TypeScript", "JavaScript"]
+      "keywords": [
+        "C",
+        "C++",
+        "Go",
+        "Python",
+        "Java",
+        "MASM",
+        "TypeScript",
+        "JavaScript"
+      ]
     },
     {
       "name": "Web & Full Stack Development",
       "level": "Advanced",
       "icon": "fa-solid fa-globe",
-      "keywords": ["React", "Next.js", "Tailwind CSS", "Node.js", "HTML", "CSS", "Figma", "SQL", "Git"]
+      "keywords": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Node.js",
+        "HTML",
+        "CSS",
+        "Figma",
+        "SQL",
+        "Git"
+      ]
     },
     {
       "name": "Software Testing",
       "level": "Intermediate",
       "icon": "fa-solid fa-bug",
-      "keywords": ["Manual Testing", "SDLC", "STLC", "Test Case Design", "Bug Reporting (Jira)"]
+      "keywords": [
+        "Manual Testing",
+        "SDLC",
+        "STLC",
+        "Test Case Design",
+        "Bug Reporting (Jira)"
+      ]
     },
     {
       "name": "Blockchain & Smart Contracts",
       "level": "Intermediate",
       "icon": "fa-solid fa-link",
-      "keywords": ["Solidity", "MetaMask", "Web3.js"]
+      "keywords": [
+        "Solidity",
+        "MetaMask",
+        "Web3.js"
+      ]
     },
     {
       "name": "AI/ML & Tools",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["Scikit-learn", "TensorFlow", "Gemini API", "Stanford NLP", "OpenAI APIs"]
+      "keywords": [
+        "Scikit-learn",
+        "TensorFlow",
+        "Gemini API",
+        "Stanford NLP",
+        "OpenAI APIs"
+      ]
     },
     {
       "name": "Concepts",
@@ -256,17 +304,34 @@
     {
       "name": "Artificial Intelligence & NLP",
       "icon": "fa-solid fa-robot",
-      "keywords": ["Large Language Models", "NLP", "Deep Learning", "AI Applications", "Speech Analysis", "Automation"]
+      "keywords": [
+        "Large Language Models",
+        "NLP",
+        "Deep Learning",
+        "AI Applications",
+        "Speech Analysis",
+        "Automation"
+      ]
     },
     {
       "name": "Competitive Programming",
       "icon": "fa-solid fa-laptop-code",
-      "keywords": ["Codeforces", "LeetCode", "AtCoder", "Algorithmic Problem Solving"]
+      "keywords": [
+        "Codeforces",
+        "LeetCode",
+        "AtCoder",
+        "Algorithmic Problem Solving"
+      ]
     },
     {
       "name": "Research & Mentorship",
       "icon": "fa-solid fa-flask",
-      "keywords": ["LLMs", "Machine Learning", "Education", "Research Assistance"]
+      "keywords": [
+        "LLMs",
+        "Machine Learning",
+        "Education",
+        "Research Assistance"
+      ]
     }
   ],
   "references": [

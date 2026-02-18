@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Undergraduate Student | United International University
+subtitle: Undergraduate Student | UGA | Research Intern
 
 profile:
   align: right
@@ -25,12 +25,13 @@ latest_posts:
   limit: 3
 ---
 
-I am a CS undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research in **Video Understanding**, **Large Language Models (LLMs)**, **Human-Computer Interaction (HCI)**, and **LLM Privacy**. Currently, I serve as an **Undergraduate Teaching Assistant** at UIU. My work bridges the gap between algorithmic theory and real-world AI applications. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges.
+I am a CS undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research. Currently, I serve as an **Undergraduate Teaching Assistant** at UIU and am a **Research Intern** at CRISiSLab, ([JCDR, Massey University, NZ](https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/)), working with [Dr. Catalina Miranda](https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=981222) on computational disaster resilience projects. My work bridges the gap between algorithmic theory and real-world AI applications — from numerical modelling of timber connectors to building ML pipelines for hazard analysis. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges.
 
 <div class="research-interests-section" style="margin-top: 1.5rem; margin-bottom: 1rem;">
   <div style="height: 2px; width: 60px; background: linear-gradient(to right, var(--global-theme-color), transparent); margin-bottom: .50rem; border-radius: 1px;"></div>
   <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--global-text-color);">Research Interests</h3>
   <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0; line-height: 1.8;">
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Numerical Analysis & Computational Modelling</li>
     <li style="color: var(--global-text-color); font-size: 0.95rem;">Video Understanding</li>
     <li style="color: var(--global-text-color); font-size: 0.95rem;">Large Language Models (LLMs) & Multimodal AI</li>
     <li style="color: var(--global-text-color); font-size: 0.95rem;">Human-Computer Interaction (HCI)</li>

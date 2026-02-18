@@ -64,6 +64,16 @@ layout: default
                   <a href="mailto:{{ social[1] | encode_email }}" title="Email" class="profile-btn">
                     <i class="fa-solid fa-envelope"></i>
                   </a>
+                {% when 'leetcode_id' %}
+                  <a
+                    href="https://leetcode.com/u/{{ social[1] }}"
+                    title="LeetCode"
+                    class="profile-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="si si-leetcode"></i>
+                  </a>
               {% endcase %}
             {% endfor %}
           </div>
