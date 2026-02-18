@@ -7,26 +7,30 @@
 #     content: "Your announcement text (supports emojis and basic HTML)"
 #     title: "Optional - only for inline: false entries"
 #     url: "Optional - only for inline: false entries"
-- date: 2026-02-04 00:00:00-0400
+- date: Feb, 2026
+  inline: true
+  content: "Selected as a <strong>Research Intern</strong> at <strong><a href='https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/'>CRISiSLab, Massey University</a></strong> (New Zealand), working with Dr. Catalina Miranda on numerical modelling of timber connectors for disaster resilience research!"
+
+- date: Feb, 2026
   inline: true
   content: "Selected as a <strong><a href='https://qiskit.org/advocates/'>Qiskit Advocate</a></strong> in the <strong>IBM Qiskit Advocate Program</strong>!"
 
-- date: 2026-01-15 00:00:00-0400
+- date: Jan, 2026
   inline: true
   content: "Won <strong><a href='https://www.uphysicsc.com/2025_UPC_Results.pdf'>Bronze Medal</a></strong> at the <strong>University Physics Competition (UPC) 2025</strong>!"
 
-- date: 2025-12-20 00:00:00-0400
+- date: Nov, 2025
   inline: true
   content: "Nominated to represent Bangladesh at the <strong>International Data Science Olympiad (IDSOL) 2025</strong>!"
 
-- date: 2025-08-15 00:00:00-0400
+- date: Aug, 2025
   inline: true
   content: "Finalist at the <strong>Bangladesh Blockchain Olympiad 2025</strong> for EngReji - AI Powered Learning Platform!"
 
-- date: 2025-02-10 00:00:00-0400
+- date: Feb, 2025
   inline: true
   content: "Participated in the <strong>UIU CSE Fest 2025 Inter-University Programming Contest (IUPC)</strong>!"
 
-- date: 2024-12-01 00:00:00-0400
+- date: Dec, 2024
   inline: true
   content: "Won <strong>1st place (Poster Category)</strong> at UIU Fall Project Show 2024 for OptiTask!"

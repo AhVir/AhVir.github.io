@@ -34,6 +34,19 @@
   },
   "work": [
     {
+      "name": "CRISiS Lab, Joint Centre for Disaster Research, Massey University",
+      "position": "Research Intern",
+      "url": "https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/",
+      "startDate": "2026-02",
+      "endDate": "",
+      "summary": "Selected for research internship at the Joint Centre for Disaster Research, working under Dr. Catalina Miranda on computational disaster resilience projects.",
+      "highlights": [
+        "Working with Dr. Catalina Miranda (Lecturer, JCDR) on numerical modelling of timber connectors for structural disaster resilience research.",
+        "Building and annotating sensor/digital datasets to support machine learning workflows in hazard analysis.",
+        "Developing computational models and data pipelines for analyzing disaster risk communication."
+      ]
+    },
+    {
       "name": "United International University",
       "position": "Undergraduate Teaching Assistant",
       "url": "https://www.uiu.ac.bd/",
@@ -70,7 +83,7 @@
       "endDate": "",
       "score": "3.99/4.00 (After 3.5 Years, Ongoing)",
       "courses": [
-        "Awarded 9x Result-Based Scholarships for academic excellence",
+        "Merit-based scholarships in all undergrad trimesters (10x)",
         "Data Structures & Algorithms",
         "Artificial Intelligence",
         "Machine Learning",
@@ -92,7 +105,7 @@
       ],
       "startDate": "2025-09-01",
       "endDate": "2025-10-01",
-      "url": "https://github.com/ahvir"
+      "url": "https://github.com/AhVir/EngReji"
     },
     {
       "name": "OptiTask - Emotion-Aware Productivity System",
@@ -104,7 +117,7 @@
       ],
       "startDate": "2025-01-01",
       "endDate": "2025-01-31",
-      "url": "https://github.com/ahvir"
+      "url": "https://github.com/AhVir/OptiTask_"
     },
     {
       "name": "Autonomous Car Parking System",
@@ -116,7 +129,7 @@
       ],
       "startDate": "2024-07-01",
       "endDate": "2024-07-31",
-      "url": "https://github.com/ahvir"
+      "url": "https://github.com/AhVir/Autonomous-Car-Parking"
     },
     {
       "name": "VoteChain - Decentralized Voting Platform",
@@ -128,7 +141,7 @@
       ],
       "startDate": "2025-06-01",
       "endDate": "2025-07-01",
-      "url": "https://github.com/ahvir"
+      "url": "https://github.com/AhVir/VoteChain"
     }
   ],
   "activities": [
