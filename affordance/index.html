@@ -1,363 +1,400 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Affordance Level Annotation</title>
-    <link rel="icon" type="image/x-icon" href="./circle.png">
+    <link rel="icon" type="image/x-icon" href="./circle.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#4f46e5',
-                        'secondary': '#6366f1',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4f46e5",
+              secondary: "#6366f1",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        /* Custom styles for video element and responsiveness */
-        .video-card {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+      /* Custom styles for video element and responsiveness */
+      .video-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .video-player {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+        background-color: #000;
+      }
+      .video-loading {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 5s infinite;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .video-loading:hover {
+        background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
+        transform: scale(1.01);
+      }
+      @keyframes loading {
+        0% {
+          background-position: 200% 0;
         }
-        .video-player {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            background-color: #000;
+        100% {
+          background-position: -200% 0;
         }
-        .video-loading {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 5s infinite;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .video-loading:hover {
-            background: linear-gradient(90deg, #e0e0e0 25%, #d0d0d0 50%, #e0e0e0 75%);
-            transform: scale(1.01);
-        }
-        @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
+      }
     </style>
-</head>
-<body class="bg-gray-50 font-sans text-gray-800 p-4 sm:p-8">
-
+  </head>
+  <body class="bg-gray-50 font-sans text-gray-800 p-4 sm:p-8">
     <header class="max-w-7xl mx-auto mb-8 bg-white p-6 rounded-xl shadow-lg">
-        <h1 class="text-3xl font-bold text-primary mb-2">Affordance Level Annotation</h1>
+      <h1 class="text-3xl font-bold text-primary mb-2">Affordance Level Annotation</h1>
 
-        <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
-            <div id="status-message" class="text-sm font-medium text-gray-500 mb-2 sm:mb-0">
-                Loading data...
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
-                <select id="object-filter" class="w-full md:w-40 px-3 py-2 text-base border-gray-300 focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm rounded-md bg-white border shadow-sm">
-                    <option value="">Filter by Object</option>
-                </select>
-                <select id="interaction-filter" class="w-full md:w-40 px-3 py-2 text-base border-gray-300 focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm rounded-md bg-white border shadow-sm">
-                    <option value="">Filter by Interaction</option>
-                </select>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto mt-4 md:mt-0">
-                <button id="reset-btn" class="flex items-center justify-center space-x-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-[1.02] disabled:opacity-50" disabled>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.564 1 1 0 11-1.885.664A5.002 5.002 0 005.9 5.118V7a1 1 0 01-2 0V3a1 1 0 011-1zm12.657 9.458a1 1 0 00-1.414-1.414 5.002 5.002 0 00-7.88 1.956v1.414a1 1 0 102 0v-1.101A7.002 7.002 0 0115.05 4.949a1 1 0 001.414 1.414z" clip-rule="evenodd" />
-                    </svg>
-                    Reset Annotations
-                </button>
-                
-                <button id="download-btn" class="flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-[1.02] disabled:opacity-50" disabled>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v7a1 1 0 11-2 0V3a1 1 0 011-1z" clip-rule="evenodd" />
-                    </svg>
-                    Download Annotations (.csv)
-                </button>
-            </div>
+      <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+        <div id="status-message" class="text-sm font-medium text-gray-500 mb-2 sm:mb-0">Loading data...</div>
+
+        <div class="flex flex-col md:flex-row gap-4 w-full md:w-auto">
+          <select
+            id="object-filter"
+            class="w-full md:w-40 px-3 py-2 text-base border-gray-300 focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm rounded-md bg-white border shadow-sm"
+          >
+            <option value="">Filter by Object</option>
+          </select>
+          <select
+            id="interaction-filter"
+            class="w-full md:w-40 px-3 py-2 text-base border-gray-300 focus:outline-none focus:ring-secondary focus:border-secondary sm:text-sm rounded-md bg-white border shadow-sm"
+          >
+            <option value="">Filter by Interaction</option>
+          </select>
         </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto mt-4 md:mt-0">
+          <button
+            id="reset-btn"
+            class="flex items-center justify-center space-x-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-[1.02] disabled:opacity-50"
+            disabled
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fill-rule="evenodd"
+                d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.564 1 1 0 11-1.885.664A5.002 5.002 0 005.9 5.118V7a1 1 0 01-2 0V3a1 1 0 011-1zm12.657 9.458a1 1 0 00-1.414-1.414 5.002 5.002 0 00-7.88 1.956v1.414a1 1 0 102 0v-1.101A7.002 7.002 0 0115.05 4.949a1 1 0 001.414 1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            Reset Annotations
+          </button>
+
+          <button
+            id="download-btn"
+            class="flex items-center justify-center space-x-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 transform hover:scale-[1.02] disabled:opacity-50"
+            disabled
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fill-rule="evenodd"
+                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L10 11.586l1.293-1.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v7a1 1 0 11-2 0V3a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+            Download Annotations (.csv)
+          </button>
+        </div>
+      </div>
     </header>
 
-    <main id="video-list" class="max-w-7xl mx-auto">
-    </main>
+    <main id="video-list" class="max-w-7xl mx-auto"></main>
 
     <script>
-        // --- Configuration ---
-        const DATA_URL = './model_responses.csv'; 
-        const VIDEO_BASE_PATH = './encoded_videos/'; 
-        const LOCAL_STORAGE_KEY = 'affordance_annotations';
-        const VIDEO_LIST_EL = document.getElementById('video-list');
-        const DOWNLOAD_BTN = document.getElementById('download-btn');
-        const RESET_BTN = document.getElementById('reset-btn'); 
-        const STATUS_EL = document.getElementById('status-message');
-        
-        // NEW FILTER REFERENCES
-        const OBJECT_FILTER_EL = document.getElementById('object-filter');
-        const INTERACTION_FILTER_EL = document.getElementById('interaction-filter');
+      // --- Configuration ---
+      const DATA_URL = "./model_responses.csv";
+      const VIDEO_BASE_PATH = "./encoded_videos/";
+      const LOCAL_STORAGE_KEY = "affordance_annotations";
+      const VIDEO_LIST_EL = document.getElementById("video-list");
+      const DOWNLOAD_BTN = document.getElementById("download-btn");
+      const RESET_BTN = document.getElementById("reset-btn");
+      const STATUS_EL = document.getElementById("status-message");
 
-        // Global data store
-        let allVideoData = [];
-        let filteredVideoData = []; // Store the currently filtered list
-        let uniqueObjects = new Set(); 
-        let uniqueInteractions = new Set(); 
+      // NEW FILTER REFERENCES
+      const OBJECT_FILTER_EL = document.getElementById("object-filter");
+      const INTERACTION_FILTER_EL = document.getElementById("interaction-filter");
 
-        // Classification options for the dropdown
-        const options = [
-            { value: '', label: '— Select Level —' },
-            { value: 'Telic', label: 'Telic' },
-            { value: 'Gibsonian', label: 'Gibsonian' },
-        ];
-        
-        // --- Helper Functions for Filtering ---
+      // Global data store
+      let allVideoData = [];
+      let filteredVideoData = []; // Store the currently filtered list
+      let uniqueObjects = new Set();
+      let uniqueInteractions = new Set();
 
-        /**
-         * Extracts the object and interaction from a video file name.
-         */
-        function parseVideoName(videoName) {
-            // Remove extension and split by underscore
-            const parts = videoName.replace('.mp4', '').split('_');
-            
-            // Assuming format: DateXX_SubXX_object_interaction_...
-            if (parts.length >= 4) {
-                return {
-                    object: parts[2],
-                    interaction: parts[3]
-                };
-            }
-            return { object: null, interaction: null };
+      // Classification options for the dropdown
+      const options = [
+        { value: "", label: "— Select Level —" },
+        { value: "Telic", label: "Telic" },
+        { value: "Gibsonian", label: "Gibsonian" },
+      ];
+
+      // --- Helper Functions for Filtering ---
+
+      /**
+       * Extracts the object and interaction from a video file name.
+       */
+      function parseVideoName(videoName) {
+        // Remove extension and split by underscore
+        const parts = videoName.replace(".mp4", "").split("_");
+
+        // Assuming format: DateXX_SubXX_object_interaction_...
+        if (parts.length >= 4) {
+          return {
+            object: parts[2],
+            interaction: parts[3],
+          };
+        }
+        return { object: null, interaction: null };
+      }
+
+      /**
+       * Populates the filter dropdowns dynamically.
+       */
+      function populateFilters() {
+        // Populate Object Filter
+        OBJECT_FILTER_EL.innerHTML = '<option value="">Filter by Object</option>';
+        Array.from(uniqueObjects)
+          .sort()
+          .forEach((obj) => {
+            const option = document.createElement("option");
+            option.value = obj;
+            // Capitalize first letter for display
+            option.textContent = obj.charAt(0).toUpperCase() + obj.slice(1);
+            OBJECT_FILTER_EL.appendChild(option);
+          });
+
+        // Populate Interaction Filter
+        INTERACTION_FILTER_EL.innerHTML = '<option value="">Filter by Interaction</option>';
+        Array.from(uniqueInteractions)
+          .sort()
+          .forEach((interaction) => {
+            const option = document.createElement("option");
+            option.value = interaction;
+            // Capitalize first letter for display
+            option.textContent = interaction.charAt(0).toUpperCase() + interaction.slice(1);
+            INTERACTION_FILTER_EL.appendChild(option);
+          });
+      }
+
+      /**
+       * Filters the video data based on selected object and interaction.
+       */
+      function filterVideos() {
+        const selectedObject = OBJECT_FILTER_EL.value;
+        const selectedInteraction = INTERACTION_FILTER_EL.value;
+
+        if (!selectedObject && !selectedInteraction) {
+          // No filters applied, show all
+          filteredVideoData = allVideoData;
+        } else {
+          // Apply filters
+          filteredVideoData = allVideoData.filter((item) => {
+            const matchesObject = !selectedObject || item.object === selectedObject;
+            const matchesInteraction = !selectedInteraction || item.interaction === selectedInteraction;
+            return matchesObject && matchesInteraction;
+          });
         }
 
-        /**
-         * Populates the filter dropdowns dynamically.
-         */
-        function populateFilters() {
-            // Populate Object Filter
-            OBJECT_FILTER_EL.innerHTML = '<option value="">Filter by Object</option>';
-            Array.from(uniqueObjects).sort().forEach(obj => {
-                const option = document.createElement('option');
-                option.value = obj;
-                // Capitalize first letter for display
-                option.textContent = obj.charAt(0).toUpperCase() + obj.slice(1);
-                OBJECT_FILTER_EL.appendChild(option);
-            });
+        // Re-render the UI with the filtered data
+        renderData();
+      }
 
-            // Populate Interaction Filter
-            INTERACTION_FILTER_EL.innerHTML = '<option value="">Filter by Interaction</option>';
-            Array.from(uniqueInteractions).sort().forEach(interaction => {
-                const option = document.createElement('option');
-                option.value = interaction;
-                // Capitalize first letter for display
-                option.textContent = interaction.charAt(0).toUpperCase() + interaction.slice(1);
-                INTERACTION_FILTER_EL.appendChild(option);
-            });
-        }
-        
-        /**
-         * Filters the video data based on selected object and interaction.
-         */
-        function filterVideos() {
-            const selectedObject = OBJECT_FILTER_EL.value;
-            const selectedInteraction = INTERACTION_FILTER_EL.value;
+      // --- Core Functions ---
 
-            if (!selectedObject && !selectedInteraction) {
-                // No filters applied, show all
-                filteredVideoData = allVideoData;
-            } else {
-                // Apply filters
-                filteredVideoData = allVideoData.filter(item => {
-                    const matchesObject = !selectedObject || item.object === selectedObject;
-                    const matchesInteraction = !selectedInteraction || item.interaction === selectedInteraction;
-                    return matchesObject && matchesInteraction;
-                });
-            }
-            
-            // Re-render the UI with the filtered data
-            renderData();
-        }
+      /**
+       * Parses a CSV string into an array of objects.
+       */
+      function parseCSV(csvString) {
+        const lines = csvString
+          .trim()
+          .split("\n")
+          .filter((line) => line.trim() !== "");
+        if (lines.length < 2) return [];
 
+        const data = [];
 
-        // --- Core Functions ---
+        for (let i = 1; i < lines.length; i++) {
+          const line = lines[i].trim();
 
-        /**
-         * Parses a CSV string into an array of objects.
-         */
-        function parseCSV(csvString) {
-            const lines = csvString.trim().split('\n').filter(line => line.trim() !== '');
-            if (lines.length < 2) return []; 
-            
-            const data = [];
+          const firstCommaIndex = line.indexOf(",");
+          const lastCommaIndex = line.lastIndexOf(",");
 
-            for (let i = 1; i < lines.length; i++) {
-                const line = lines[i].trim();
+          if (firstCommaIndex === -1 || lastCommaIndex === -1 || lastCommaIndex === firstCommaIndex) {
+            console.warn("Skipping malformed CSV line:", line);
+            continue;
+          }
 
-                const firstCommaIndex = line.indexOf(',');
-                const lastCommaIndex = line.lastIndexOf(',');
-                
-                if (firstCommaIndex === -1 || lastCommaIndex === -1 || lastCommaIndex === firstCommaIndex) {
-                    console.warn("Skipping malformed CSV line:", line);
-                    continue; 
-                }
-                
-                const video_path = line.substring(0, firstCommaIndex).trim();
-                const label = line.substring(lastCommaIndex + 1).trim().replace(/"/g, '');
-                let model_response = line.substring(firstCommaIndex + 1, lastCommaIndex).trim();
+          const video_path = line.substring(0, firstCommaIndex).trim();
+          const label = line
+            .substring(lastCommaIndex + 1)
+            .trim()
+            .replace(/"/g, "");
+          let model_response = line.substring(firstCommaIndex + 1, lastCommaIndex).trim();
 
-                if (model_response.startsWith('"') && model_response.endsWith('"')) {
-                     model_response = model_response.substring(1, model_response.length - 1).replace(/""/g, '"');
-                } else {
-                     model_response = model_response.replace(/^"|"$/g, '').replace(/""/g, '"');
-                }
+          if (model_response.startsWith('"') && model_response.endsWith('"')) {
+            model_response = model_response.substring(1, model_response.length - 1).replace(/""/g, '"');
+          } else {
+            model_response = model_response.replace(/^"|"$/g, "").replace(/""/g, '"');
+          }
 
-                // NEW: Extract object and interaction and add to data structure
-                const { object, interaction } = parseVideoName(video_path);
-                if (object) uniqueObjects.add(object);
-                if (interaction) uniqueInteractions.add(interaction);
-                
-                data.push({
-                    video_name: video_path, 
-                    model_response: model_response,
-                    level: '',
-                    object: object, 
-                    interaction: interaction 
-                });
-            }
+          // NEW: Extract object and interaction and add to data structure
+          const { object, interaction } = parseVideoName(video_path);
+          if (object) uniqueObjects.add(object);
+          if (interaction) uniqueInteractions.add(interaction);
 
-            return data;
+          data.push({
+            video_name: video_path,
+            model_response: model_response,
+            level: "",
+            object: object,
+            interaction: interaction,
+          });
         }
 
-        /**
-         * Reads the annotation state from localStorage and merges it with the fresh data.
-         */
-        function loadSavedSelections() {
-            try {
-                const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
-                return storedData ? JSON.parse(storedData) : {};
-            } catch (e) {
-                console.error("Could not load from localStorage:", e);
-                return {};
-            }
+        return data;
+      }
+
+      /**
+       * Reads the annotation state from localStorage and merges it with the fresh data.
+       */
+      function loadSavedSelections() {
+        try {
+          const storedData = localStorage.getItem(LOCAL_STORAGE_KEY);
+          return storedData ? JSON.parse(storedData) : {};
+        } catch (e) {
+          console.error("Could not load from localStorage:", e);
+          return {};
+        }
+      }
+
+      /**
+       * Saves the current classification state to localStorage.
+       */
+      function saveSelections() {
+        const currentSelections = {};
+        // Use allVideoData to ensure all annotations are saved, not just filtered ones
+        allVideoData.forEach((item) => {
+          currentSelections[item.video_name] = item.level || "";
+        });
+        try {
+          localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentSelections));
+        } catch (e) {
+          console.error("Could not save to localStorage:", e);
+        }
+      }
+
+      /**
+       * Handles the change event from a classification dropdown.
+       */
+      function handleSelectionChange(index, value) {
+        // Find the item in the currently *filtered* list using the passed index
+        const videoName = filteredVideoData[index].video_name;
+
+        // Find the corresponding index in the *full* data list
+        const fullDataIndex = allVideoData.findIndex((item) => item.video_name === videoName);
+
+        if (fullDataIndex !== -1) {
+          allVideoData[fullDataIndex].level = value; // Update the master data
+          filteredVideoData[index].level = value; // Update the displayed data
+
+          saveSelections();
+          updateStatus();
+        }
+      }
+
+      /**
+       * Clears all annotations and resets the UI.
+       */
+      function resetAnnotations() {
+        if (
+          !confirm("Are you sure you want to RESET ALL ANNOTATIONS? This action cannot be undone and will clear all saved progress in your browser.")
+        ) {
+          return;
         }
 
-        /**
-         * Saves the current classification state to localStorage.
-         */
-        function saveSelections() {
-            const currentSelections = {};
-            // Use allVideoData to ensure all annotations are saved, not just filtered ones
-            allVideoData.forEach(item => {
-                currentSelections[item.video_name] = item.level || '';
-            });
-            try {
-                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(currentSelections));
-            } catch (e) {
-                console.error("Could not save to localStorage:", e);
-            }
+        // 1. Clear Local Storage
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
+
+        // 2. Clear annotations in the current data state
+        allVideoData.forEach((item) => {
+          item.level = "";
+        });
+
+        // 3. Re-render the UI using current filter state
+        filterVideos();
+
+        // 4. Update status
+        updateStatus();
+        alert("All annotations have been reset.");
+      }
+
+      /**
+       * Updates the status message based on completion progress.
+       */
+      function updateStatus() {
+        const total = allVideoData.length;
+        const completed = allVideoData.filter((item) => item.level && item.level !== "").length;
+
+        STATUS_EL.textContent = `Progress: ${completed} of ${total} clips classified (${Math.round((completed / total) * 100) || 0}%)`;
+
+        DOWNLOAD_BTN.disabled = total === 0;
+        RESET_BTN.disabled = total === 0;
+
+        const percent = Math.round((completed / total) * 100) || 0;
+        STATUS_EL.classList.remove("text-red-500", "text-yellow-600", "text-green-600", "font-bold", "text-gray-500");
+        if (total === 0) {
+          STATUS_EL.classList.add("text-gray-500");
+        } else if (percent === 100) {
+          STATUS_EL.classList.add("text-green-600", "font-bold");
+        } else if (percent > 0) {
+          STATUS_EL.classList.add("text-yellow-600");
+        } else {
+          STATUS_EL.classList.add("text-gray-500");
         }
+      }
 
-        /**
-         * Handles the change event from a classification dropdown.
-         */
-        function handleSelectionChange(index, value) {
-            // Find the item in the currently *filtered* list using the passed index
-            const videoName = filteredVideoData[index].video_name;
-            
-            // Find the corresponding index in the *full* data list
-            const fullDataIndex = allVideoData.findIndex(item => item.video_name === videoName);
+      /**
+       * Creates a single HTML card for a video entry.
+       */
+      function createVideoCard(item, index) {
+        const videoSrc = `${VIDEO_BASE_PATH}${item.video_name}`;
+        const currentLevel = item.level || "";
 
-            if (fullDataIndex !== -1) {
-                allVideoData[fullDataIndex].level = value; // Update the master data
-                filteredVideoData[index].level = value;     // Update the displayed data
-                
-                saveSelections();
-                updateStatus();
-            }
-        }
-
-        /**
-         * Clears all annotations and resets the UI.
-         */
-        function resetAnnotations() {
-            if (!confirm("Are you sure you want to RESET ALL ANNOTATIONS? This action cannot be undone and will clear all saved progress in your browser.")) {
-                return;
-            }
-
-            // 1. Clear Local Storage
-            localStorage.removeItem(LOCAL_STORAGE_KEY);
-
-            // 2. Clear annotations in the current data state
-            allVideoData.forEach(item => {
-                item.level = '';
-            });
-
-            // 3. Re-render the UI using current filter state
-            filterVideos(); 
-            
-            // 4. Update status
-            updateStatus();
-            alert("All annotations have been reset.");
-        }
-
-        /**
-         * Updates the status message based on completion progress.
-         */
-        function updateStatus() {
-            const total = allVideoData.length;
-            const completed = allVideoData.filter(item => item.level && item.level !== '').length;
-            
-            STATUS_EL.textContent = `Progress: ${completed} of ${total} clips classified (${Math.round((completed / total) * 100) || 0}%)`;
-            
-            DOWNLOAD_BTN.disabled = total === 0;
-            RESET_BTN.disabled = total === 0; 
-            
-            const percent = Math.round((completed / total) * 100) || 0;
-            STATUS_EL.classList.remove('text-red-500', 'text-yellow-600', 'text-green-600', 'font-bold', 'text-gray-500');
-            if (total === 0) {
-                 STATUS_EL.classList.add('text-gray-500');
-            } else if (percent === 100) {
-                STATUS_EL.classList.add('text-green-600', 'font-bold');
-            } else if (percent > 0) {
-                STATUS_EL.classList.add('text-yellow-600');
-            } else {
-                STATUS_EL.classList.add('text-gray-500');
-            }
-        }
-
-        /**
-         * Creates a single HTML card for a video entry.
-         */
-        function createVideoCard(item, index) {
-            const videoSrc = `${VIDEO_BASE_PATH}${item.video_name}`;
-            const currentLevel = item.level || '';
-            
-            const optionsHtml = options.map(opt => `
-                <option value="${opt.value}" ${opt.value === currentLevel ? 'selected' : ''}>
+        const optionsHtml = options
+          .map(
+            (opt) => `
+                <option value="${opt.value}" ${opt.value === currentLevel ? "selected" : ""}>
                     ${opt.label}
                 </option>
-            `).join('');
+            `
+          )
+          .join("");
 
-            const selectId = `level-select-${index}`;
-            const videoId = `video-player-${index}`;
-            const loadingId = `loading-${index}`;
-            const errorId = `error-${index}`;
+        const selectId = `level-select-${index}`;
+        const videoId = `video-player-${index}`;
+        const loadingId = `loading-${index}`;
+        const errorId = `error-${index}`;
 
-            return `
+        return `
                 <div class="video-card bg-white p-6 rounded-xl shadow-md border border-gray-100 transition duration-300 hover:shadow-xl h-full">
                     <h2 class="text-xl font-semibold text-secondary mb-4 break-all">Clip ${index + 1} (Filtered): ${item.video_name}</h2>
                     
@@ -382,7 +419,7 @@
                             <div class="p-4 bg-gray-50 border-l-4 border-primary/50 rounded-lg h-full">
                                 <p class="text-sm font-medium text-primary mb-1">Model Response:</p>
                                 <p class="text-sm text-gray-700">${item.model_response}</p>
-                                <p class="text-xs mt-2 text-gray-400">Object: ${item.object || 'N/A'}, Interaction: ${item.interaction || 'N/A'}</p>
+                                <p class="text-xs mt-2 text-gray-400">Object: ${item.object || "N/A"}, Interaction: ${item.interaction || "N/A"}</p>
                             </div>
 
                             <div class="mt-auto">
@@ -395,255 +432,265 @@
                     </div>
                 </div>
             `;
-        }
+      }
 
-        /**
-         * Renders all video cards (the filtered set) in a two-column layout
-         */
-        function renderData() {
-            let html = '';
-            
-            const dataToRender = filteredVideoData;
+      /**
+       * Renders all video cards (the filtered set) in a two-column layout
+       */
+      function renderData() {
+        let html = "";
 
-            if (dataToRender.length === 0 && (OBJECT_FILTER_EL.value || INTERACTION_FILTER_EL.value)) {
-                 html = `<div class="p-6 bg-yellow-100 text-yellow-800 rounded-xl max-w-4xl mx-auto">
+        const dataToRender = filteredVideoData;
+
+        if (dataToRender.length === 0 && (OBJECT_FILTER_EL.value || INTERACTION_FILTER_EL.value)) {
+          html = `<div class="p-6 bg-yellow-100 text-yellow-800 rounded-xl max-w-4xl mx-auto">
                     <h2 class="text-lg font-bold mb-2">No Clips Found</h2>
                     <p>No videos match the current filter criteria. Try clearing the filters.</p>
                 </div>`;
-            } else if (dataToRender.length === 0) {
-                 html = `<div class="p-6 bg-yellow-100 text-yellow-800 rounded-xl max-w-4xl mx-auto">
+        } else if (dataToRender.length === 0) {
+          html = `<div class="p-6 bg-yellow-100 text-yellow-800 rounded-xl max-w-4xl mx-auto">
                     <h2 class="text-lg font-bold mb-2">No Data Available</h2>
                     <p>The system loaded 0 clips. Check your CSV file.</p>
                 </div>`;
-            } else {
-                // Create rows with two cards each
-                for (let i = 0; i < dataToRender.length; i += 2) {
-                    if (i + 1 < dataToRender.length) {
-                        html += `
+        } else {
+          // Create rows with two cards each
+          for (let i = 0; i < dataToRender.length; i += 2) {
+            if (i + 1 < dataToRender.length) {
+              html += `
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
                                 ${createVideoCard(dataToRender[i], i)}
-                                ${createVideoCard(dataToRender[i+1], i+1)}
+                                ${createVideoCard(dataToRender[i + 1], i + 1)}
                             </div>
                         `;
-                    } else {
-                        // Last item (odd number of items)
-                        html += `
+            } else {
+              // Last item (odd number of items)
+              html += `
                             <div class="grid grid-cols-1 gap-6 mb-6">
                                 ${createVideoCard(dataToRender[i], i)}
                             </div>
                         `;
-                    }
-                }
             }
-            
-            VIDEO_LIST_EL.innerHTML = html;
-
-            // Attach event listeners to all dynamically created dropdowns
-            document.querySelectorAll('select[data-index]').forEach(selectEl => {
-                selectEl.addEventListener('change', (e) => {
-                    const index = parseInt(e.target.dataset.index, 10);
-                    const value = e.target.value;
-                    handleSelectionChange(index, value);
-                });
-            });
-
-            // Set up manual loading for videos (user must click to load)
-            setupManualLoading();
-            updateStatus();
+          }
         }
 
-        /**
-         * Loads a single video when requested by user
-         */
-        function loadVideoOnDemand(index) {
-            const videoId = `video-player-${index}`;
-            const loadingId = `loading-${index}`;
-            const errorId = `error-${index}`;
-            
-            const videoElement = document.getElementById(videoId);
-            const loadingElement = document.getElementById(loadingId);
-            const errorElement = document.getElementById(errorId);
+        VIDEO_LIST_EL.innerHTML = html;
 
-            if (!videoElement || !loadingElement) return;
+        // Attach event listeners to all dynamically created dropdowns
+        document.querySelectorAll("select[data-index]").forEach((selectEl) => {
+          selectEl.addEventListener("change", (e) => {
+            const index = parseInt(e.target.dataset.index, 10);
+            const value = e.target.value;
+            handleSelectionChange(index, value);
+          });
+        });
 
-            // Check if already loading or loaded
-            if (loadingElement.getAttribute('data-loading') === 'true' || videoElement.src) {
-                return;
+        // Set up manual loading for videos (user must click to load)
+        setupManualLoading();
+        updateStatus();
+      }
+
+      /**
+       * Loads a single video when requested by user
+       */
+      function loadVideoOnDemand(index) {
+        const videoId = `video-player-${index}`;
+        const loadingId = `loading-${index}`;
+        const errorId = `error-${index}`;
+
+        const videoElement = document.getElementById(videoId);
+        const loadingElement = document.getElementById(loadingId);
+        const errorElement = document.getElementById(errorId);
+
+        if (!videoElement || !loadingElement) return;
+
+        // Check if already loading or loaded
+        if (loadingElement.getAttribute("data-loading") === "true" || videoElement.src) {
+          return;
+        }
+
+        const videoSrc = loadingElement.getAttribute("data-video-src");
+
+        console.log(`Loading video ${index}: ${videoSrc}`);
+
+        // Mark as loading
+        loadingElement.setAttribute("data-loading", "true");
+        loadingElement.style.cursor = "default";
+        loadingElement.style.animation = "none";
+        loadingElement.style.background = "#f3f4f6";
+        loadingElement.innerHTML = '<div class="text-gray-500">Loading video...</div>';
+
+        // Set the video source directly on the <video> element
+        videoElement.src = videoSrc;
+        videoElement.preload = "metadata";
+
+        // Set up video controls and behavior
+        videoElement.controls = true;
+        videoElement.loop = true;
+        videoElement.muted = true;
+
+        // Add click to play/pause functionality
+        videoElement.addEventListener("click", () => {
+          if (videoElement.paused) {
+            // Pause all other videos before playing this one
+            document.querySelectorAll("video").forEach((vid) => {
+              if (vid !== videoElement) {
+                vid.pause();
+              }
+            });
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        });
+
+        videoElement.addEventListener(
+          "loadeddata",
+          function () {
+            console.log(`Video ${index} loaded successfully`);
+            loadingElement.classList.add("hidden");
+            videoElement.classList.remove("hidden");
+
+            // Try to play if muted (respects autoplay policies)
+            if (videoElement.muted) {
+              videoElement.play().catch((e) => {
+                console.log(`Video ${index} autoplay blocked, user must click play:`, e.message);
+              });
             }
+          },
+          { once: true }
+        );
 
-            const videoSrc = loadingElement.getAttribute('data-video-src');
-            
-            console.log(`Loading video ${index}: ${videoSrc}`);
-            
-            // Mark as loading
-            loadingElement.setAttribute('data-loading', 'true');
-            loadingElement.style.cursor = 'default';
-            loadingElement.style.animation = 'none';
-            loadingElement.style.background = '#f3f4f6';
-            loadingElement.innerHTML = '<div class="text-gray-500">Loading video...</div>';
-            
-            // Set the video source directly on the <video> element
-            videoElement.src = videoSrc;
-            videoElement.preload = 'metadata';
-            
-            // Set up video controls and behavior
-            videoElement.controls = true;
-            videoElement.loop = true;
-            videoElement.muted = true;
-            
-            // Add click to play/pause functionality
-            videoElement.addEventListener('click', () => {
-                if (videoElement.paused) {
-                    // Pause all other videos before playing this one
-                    document.querySelectorAll('video').forEach(vid => {
-                        if (vid !== videoElement) {
-                            vid.pause();
-                        }
-                    });
-                    videoElement.play();
-                } else {
-                    videoElement.pause();
-                }
-            });
-            
-            videoElement.addEventListener('loadeddata', function() {
-                console.log(`Video ${index} loaded successfully`);
-                loadingElement.classList.add('hidden');
-                videoElement.classList.remove('hidden');
-                
-                // Try to play if muted (respects autoplay policies)
-                if (videoElement.muted) {
-                    videoElement.play().catch(e => {
-                        console.log(`Video ${index} autoplay blocked, user must click play:`, e.message);
-                    });
-                }
-            }, { once: true });
+        videoElement.addEventListener(
+          "canplay",
+          function () {
+            console.log(`Video ${index} can play`);
+          },
+          { once: true }
+        );
 
-            videoElement.addEventListener('canplay', function() {
-                console.log(`Video ${index} can play`);
-            }, { once: true });
-
-            videoElement.addEventListener('error', function(e) {
-                console.error(`Video ${index} failed to load:`, e);
-                loadingElement.classList.add('hidden');
-                if (errorElement) {
-                    errorElement.classList.remove('hidden');
-                    errorElement.textContent = `Error loading video. Please check that the file exists at: ${videoSrc} and is a valid MP4 file.`;
-                }
-            }, { once: true });
-
-            // Start loading the video
-            videoElement.load();
-        }
-
-        /**
-         * Sets up click listeners for manual video loading
-         */
-        function setupManualLoading() {
-            // Add click listeners to all loading elements
-            document.querySelectorAll('.video-loading').forEach(loadingElement => {
-                loadingElement.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-video-index'), 10);
-                    loadVideoOnDemand(index);
-                });
-            });
-        }
-
-        /**
-         * Converts the current data state to a CSV string (uses ALL data).
-         */
-        function convertToCSV() {
-            const headers = ['video_path', 'model_response', 'label'];
-            let csvContent = headers.join(',') + '\n';
-
-            allVideoData.forEach(item => {
-                // Ensure model_response is properly quoted and escaped for CSV
-                const modelResponse = `"${(item.model_response || '').replace(/"/g, '""')}"`;
-                const label = item.level || ''; 
-                
-                const row = [item.video_name, modelResponse, label];
-                csvContent += row.join(',') + '\n';
-            });
-            return csvContent;
-        }
-
-        /**
-         * Triggers the download of the CSV file.
-         */
-        function downloadCSV() {
-            const csv = convertToCSV();
-            const filename = `affordance_annotations_${new Date().toISOString().slice(0, 10)}.csv`;
-            
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            
-            const link = document.createElement("a");
-            if (link.download !== undefined) { 
-                const url = URL.createObjectURL(blob);
-                link.setAttribute("href", url);
-                link.setAttribute("download", filename);
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
+        videoElement.addEventListener(
+          "error",
+          function (e) {
+            console.error(`Video ${index} failed to load:`, e);
+            loadingElement.classList.add("hidden");
+            if (errorElement) {
+              errorElement.classList.remove("hidden");
+              errorElement.textContent = `Error loading video. Please check that the file exists at: ${videoSrc} and is a valid MP4 file.`;
             }
+          },
+          { once: true }
+        );
+
+        // Start loading the video
+        videoElement.load();
+      }
+
+      /**
+       * Sets up click listeners for manual video loading
+       */
+      function setupManualLoading() {
+        // Add click listeners to all loading elements
+        document.querySelectorAll(".video-loading").forEach((loadingElement) => {
+          loadingElement.addEventListener("click", function () {
+            const index = parseInt(this.getAttribute("data-video-index"), 10);
+            loadVideoOnDemand(index);
+          });
+        });
+      }
+
+      /**
+       * Converts the current data state to a CSV string (uses ALL data).
+       */
+      function convertToCSV() {
+        const headers = ["video_path", "model_response", "label"];
+        let csvContent = headers.join(",") + "\n";
+
+        allVideoData.forEach((item) => {
+          // Ensure model_response is properly quoted and escaped for CSV
+          const modelResponse = `"${(item.model_response || "").replace(/"/g, '""')}"`;
+          const label = item.level || "";
+
+          const row = [item.video_name, modelResponse, label];
+          csvContent += row.join(",") + "\n";
+        });
+        return csvContent;
+      }
+
+      /**
+       * Triggers the download of the CSV file.
+       */
+      function downloadCSV() {
+        const csv = convertToCSV();
+        const filename = `affordance_annotations_${new Date().toISOString().slice(0, 10)}.csv`;
+
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+
+        const link = document.createElement("a");
+        if (link.download !== undefined) {
+          const url = URL.createObjectURL(blob);
+          link.setAttribute("href", url);
+          link.setAttribute("download", filename);
+          link.style.visibility = "hidden";
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url);
         }
+      }
 
-        /**
-         * Main function to initialize the application.
-         */
-        async function initializeApp() {
-            try {
-                // 1. Fetch and Parse CSV data (unique filters are collected here)
-                const response = await fetch(DATA_URL);
-                if (!response.ok) {
-                    throw new Error(`Failed to load data. Status: ${response.status}`);
-                }
-                const csvText = await response.text();
-                
-                const freshData = parseCSV(csvText);
+      /**
+       * Main function to initialize the application.
+       */
+      async function initializeApp() {
+        try {
+          // 1. Fetch and Parse CSV data (unique filters are collected here)
+          const response = await fetch(DATA_URL);
+          if (!response.ok) {
+            throw new Error(`Failed to load data. Status: ${response.status}`);
+          }
+          const csvText = await response.text();
 
-                // 2. Load saved selections and merge
-                const savedSelections = loadSavedSelections();
-                allVideoData = freshData.map(item => ({
-                    ...item,
-                    level: savedSelections[item.video_name] || item.level || '', 
-                }));
-                
-                if (allVideoData.length === 0) {
-                     throw new Error("No data records found after parsing CSV. Check CSV format.");
-                }
+          const freshData = parseCSV(csvText);
 
-                // 3. Populate filters and set initial filtered data
-                populateFilters();
-                filteredVideoData = allVideoData; // Initially, show all data
+          // 2. Load saved selections and merge
+          const savedSelections = loadSavedSelections();
+          allVideoData = freshData.map((item) => ({
+            ...item,
+            level: savedSelections[item.video_name] || item.level || "",
+          }));
 
-                // 4. Render UI
-                renderData();
-                
-                // 5. Attach Event Listeners
-                DOWNLOAD_BTN.addEventListener('click', downloadCSV);
-                RESET_BTN.addEventListener('click', resetAnnotations); 
-                
-                // NEW: Filter Event Listeners
-                OBJECT_FILTER_EL.addEventListener('change', filterVideos);
-                INTERACTION_FILTER_EL.addEventListener('change', filterVideos);
+          if (allVideoData.length === 0) {
+            throw new Error("No data records found after parsing CSV. Check CSV format.");
+          }
 
-            } catch (error) {
-                console.error("Initialization failed:", error);
-                VIDEO_LIST_EL.innerHTML = `<div class="p-6 bg-red-100 text-red-700 rounded-xl max-w-4xl mx-auto">
+          // 3. Populate filters and set initial filtered data
+          populateFilters();
+          filteredVideoData = allVideoData; // Initially, show all data
+
+          // 4. Render UI
+          renderData();
+
+          // 5. Attach Event Listeners
+          DOWNLOAD_BTN.addEventListener("click", downloadCSV);
+          RESET_BTN.addEventListener("click", resetAnnotations);
+
+          // NEW: Filter Event Listeners
+          OBJECT_FILTER_EL.addEventListener("change", filterVideos);
+          INTERACTION_FILTER_EL.addEventListener("change", filterVideos);
+        } catch (error) {
+          console.error("Initialization failed:", error);
+          VIDEO_LIST_EL.innerHTML = `<div class="p-6 bg-red-100 text-red-700 rounded-xl max-w-4xl mx-auto">
                     <h2 class="text-lg font-bold mb-2">Error Loading Data</h2>
                     <p>Could not load or parse the data file. Please ensure **model_responses.csv** exists in the same directory as this HTML file, and is formatted correctly.</p>
                     <p class="text-sm mt-2">Details: ${error.message}</p>
                 </div>`;
-                STATUS_EL.textContent = "Error: Data failed to load.";
-                STATUS_EL.classList.add('text-red-500');
-            }
+          STATUS_EL.textContent = "Error: Data failed to load.";
+          STATUS_EL.classList.add("text-red-500");
         }
+      }
 
-        // Start the application on load
-        window.onload = initializeApp;
+      // Start the application on load
+      window.onload = initializeApp;
     </script>
-</body>
+  </body>
 </html>
-
