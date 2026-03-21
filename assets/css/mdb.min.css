@@ -110,6 +110,12 @@ a:not([href]):not([tabindex]):hover {
   max-width: 100%;
   height: auto;
 }
+.border-primary {
+  border-color: #4285f4 !important;
+}
+.border-secondary {
+  border-color: #a6c !important;
+}
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -133,6 +139,20 @@ h6 {
 .blockquote p {
   padding: 1rem 0;
   font-size: 1.1rem;
+}
+.text-primary {
+  color: #4285f4 !important;
+}
+a.text-primary:hover,
+a.text-primary:focus {
+  color: #1266f1 !important;
+}
+.text-secondary {
+  color: #a6c !important;
+}
+a.text-secondary:hover,
+a.text-secondary:focus {
+  color: #9540bf !important;
 }
 strong {
   font-weight: 500;
