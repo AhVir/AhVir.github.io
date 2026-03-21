@@ -1,53 +1,33 @@
 ---
 layout: page
 permalink: /ch/
-title: Class Hours & Counseling - Fall 2025
-description: My class schedule, UGA duties, and counseling hours
+title: Availability - Spring 2026
+description: My current availability and contact information
 nav: false
 ---
 
-## Class Schedule
+## Academic Journey Update
 
-### Saturday - Tuesday
-
-- **08:30 AM - 09:50 AM**: Class
-
-### Sunday - Wednesday
-
-- **08:30 AM - 09:50 AM**: Class
-- **09:50 AM - 11:10 AM**: Class
-- **12:30 PM - 01:50 PM**: Class
-- **03:10 PM - 04:30 PM**: Class
+I have officially **left the UGA role** to join **Samsung R&D as an Intern Engineer**. This is my **final trimester in the undergrad program**. While I no longer hold official counseling responsibilities, I remain happy to assist anyone who reaches out.
 
 ---
 
-## UGA Duties
+## Availability
 
-### Saturday
+### Saturday: 2:00 PM onwards
 
-- **11:10 AM - 01:40 PM**: UGA - ICS
-- **02:00 PM - 04:30 PM**: UGA - DSA 01
+I'm available on **Saturday afternoons (starting 2:00 PM)** for informal discussions, academic guidance, or any assistance you may need.
 
----
+**How to reach out:**
 
-## Counseling Hours for UGA Students
-
-<!-- Available for counseling during all non-class, non-UGA duty hours between **08:30 AM - 04:30 PM**. -->
-
-### Available Time Slots:
-
-- **Saturday**: 09:50 AM - 11:10 AM
-- **Sunday - Wednesday**: 11:10 AM - 12:30 PM, 01:50 PM - 03:10 PM
-- **Tuesday**: 09:50 AM - 04:30 PM
-
-Feel free to reach out during these hours for any academic support or guidance!
+- Call or message during the available time slot
+- Feel free to discuss any academic or technical topics
 
 ---
 
 ## Contact Information
 
-- **Room**: 928-929 (Combined)
 - **Email**: [sahmed223191@bscse.uiu.ac.bd](mailto:sahmed223191@bscse.uiu.ac.bd)
 - **Phone**: +8801643631514
 
-> **Note**: Feel free to call me during any of the free slots (non-class and non-UGA hours) to reach out for assistance or guidance.
+> **Note**: I'm no longer available at the official room (928-929), but please don't hesitate to reach out via call or message for any discussion or assistance!
