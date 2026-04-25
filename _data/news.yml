@@ -9,7 +9,7 @@
 #     url: "Optional - only for inline: false entries"
 - date: Apr, 2026
   inline: true
-  content: "Our paper <strong>Multi-hop Relational Contrastive Learning: Extending Spatial Contrastive Pre-training Beyond Pairwise Relations</strong> was accepted as a <strong>VisCon 2026 Poster</strong> at the <strong>CVPR 2026 workshop</strong>!"
+  content: "Our paper <strong>Multi-hop Relational Contrastive Learning: Extending Spatial Contrastive Pre-training Beyond Pairwise Relations</strong> was accepted at the <strong>CVPRW (VisCon Poster) 2026</strong>!"
 
 - date: Feb, 2026
   inline: true
