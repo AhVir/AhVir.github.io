@@ -89,6 +89,16 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+abbr[data-original-title],
+abbr[title] {
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+  cursor: help;
+  border-bottom: 0;
+  -webkit-text-decoration-skip-ink: none;
+  text-decoration-skip-ink: none;
+}
 address {
   margin-bottom: 1rem;
   font-style: normal;
@@ -410,7 +420,9 @@ pre code {
 .col-md-10,
 .col-md-2,
 .col-md-6,
+.col-sm-2,
 .col-sm-3,
+.col-sm-8,
 .col-sm-9 {
   position: relative;
   width: 100%;
@@ -430,10 +442,20 @@ pre code {
   max-width: 100%;
 }
 @media (min-width: 576px) {
+  .col-sm-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
   .col-sm-3 {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
     max-width: 25%;
+  }
+  .col-sm-8 {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
   }
   .col-sm-9 {
     -ms-flex: 0 0 75%;
@@ -577,6 +599,13 @@ pre code {
 }
 a.btn.disabled {
   pointer-events: none;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 0.2rem;
 }
 .fade {
   transition: opacity 0.15s linear;
@@ -1628,6 +1657,9 @@ a.close.disabled {
 .shadow-lg {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
+.w-100 {
+  width: 100% !important;
+}
 .w-auto {
   width: auto !important;
 }
@@ -1775,6 +1807,9 @@ a.text-secondary:hover {
   }
   a:not(.btn) {
     text-decoration: underline;
+  }
+  abbr[title]::after {
+    content: " (" attr(title) ")";
   }
   pre {
     white-space: pre-wrap !important;
