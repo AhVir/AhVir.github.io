@@ -113,6 +113,12 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
 <section id="publications" class="scroll-section">
   <h2>Publications</h2>
   <div class="publications">
+    <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem; margin-bottom: 1rem;">
+      <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
+        <strong>Multi-hop Relational Contrastive Learning: Extending Spatial Contrastive Pre-training Beyond Pairwise Relations</strong> has been accepted as a <strong>VisCon 2026 Poster</strong> at the <strong>CVPR 2026 workshop</strong>. Several other papers are currently in preparation across <em>Video Understanding</em> and <em>LLM Privacy</em>.
+      </p>
+    </div>
+
     {% capture bib_output %}{% bibliography %}{% endcapture %}
     {% if bib_output contains 'bibliography' or bib_output.size > 50 %}
       {% include bib_search.liquid %}
@@ -120,10 +126,11 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
     {% else %}
       <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem;">
         <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-          <strong>Multiple manuscripts in preparation</strong> regarding <em>Video Understanding</em> and <em>LLM Privacy</em>. Please check back soon for updates.
+          <strong>Several manuscripts are in preparation</strong> regarding <em>Video Understanding</em> and <em>LLM Privacy</em>. Please check back soon for updates.
         </p>
       </div>
     {% endif %}
+
   </div>
 </section>
 
