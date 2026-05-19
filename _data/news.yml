@@ -7,6 +7,10 @@
 #     content: "Your announcement text (supports emojis and basic HTML)"
 #     title: "Optional - only for inline: false entries"
 #     url: "Optional - only for inline: false entries"
+- date: May, 2026
+  inline: true
+  content: "Our CVPRW 2026 (VisCon) paper's preprint is available on <a href='https://arxiv.org/abs/2605.16456'>arXiv:2605.16456</a>"
+
 - date: Apr, 2026
   inline: true
   content: "Our paper <strong>Multi-hop Relational Contrastive Learning: Extending Spatial Contrastive Pre-training Beyond Pairwise Relations</strong> was accepted at the <strong>CVPRW (VisCon Poster) 2026</strong>!"
