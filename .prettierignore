@@ -13,3 +13,8 @@ _scripts/*
 _posts/2015-07-15-code.md
 assets/js/distillpub/transforms.v2.js
 INSTALL.md
+.venv
+venv
+node_modules
+_site
+vendor
