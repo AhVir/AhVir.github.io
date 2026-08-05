@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Undergraduate Student | UGA | Research Intern
+subtitle: Software Engineer | AI Systems | Research Intern
 
 profile:
   align: right
@@ -25,17 +25,17 @@ latest_posts:
   limit: 3
 ---
 
-I am a CS undergraduate student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with a strong academic focus and a passion for research. Currently, I serve as an **Undergraduate Teaching Assistant** at UIU and **Research Intern** at CRISiSLab, ([JCDR, Massey University, NZ](https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/)), working with [Dr. Catalina Miranda](https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=981222) on computational disaster resilience projects. My work bridges the gap between algorithmic theory and real-world AI applications — from numerical modelling of timber connectors to building ML pipelines for hazard analysis. Beyond research, I am fascinated by the elegance of Data Structures and Algorithms, having solved hundreds of problems across various online judges.
+I am a Computer Science and Engineering student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with industry experience in backend development, AI systems, and research. Currently, I am a **Research Intern** at **[CRISiS Lab, Joint Centre for Disaster Research (JCDR), Massey University](https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/)** and previously served as an **Undergraduate Teaching Assistant** at UIU. My work spans disaster resilience research, numerical modelling, data pipelines, and AI-driven software systems. I also enjoy competitive programming and have solved 700+ problems across major online judges.
 
 <div class="research-interests-section" style="margin-top: 1.5rem; margin-bottom: 1rem;">
   <div style="height: 2px; width: 60px; background: linear-gradient(to right, var(--global-theme-color), transparent); margin-bottom: .50rem; border-radius: 1px;"></div>
   <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--global-text-color);">Research Interests</h3>
   <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0; line-height: 1.8;">
-    <li style="color: var(--global-text-color); font-size: 0.95rem;">Numerical Analysis & Computational Modelling</li>
-    <li style="color: var(--global-text-color); font-size: 0.95rem;">Video Understanding</li>
-    <li style="color: var(--global-text-color); font-size: 0.95rem;">Large Language Models (LLMs) & Multimodal AI</li>
-    <li style="color: var(--global-text-color); font-size: 0.95rem;">Human-Computer Interaction (HCI)</li>
-    <li style="color: var(--global-text-color); font-size: 0.95rem;">LLM Privacy & Security</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Disaster Resilience Research & Numerical Modelling</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Computer Vision & Structured Visual Representation</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Large Language Models, Multimodal AI, and RAG</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Backend Systems, Observability, and Distributed Services</li>
+    <li style="color: var(--global-text-color); font-size: 0.95rem;">Human-Centered AI and Privacy-Aware Design</li>
   </ul>
 </div>
 
@@ -115,7 +115,7 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
   <div class="publications">
     <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem; margin-bottom: 1rem;">
       <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-        <strong>Multi-hop Relational Contrastive Learning: Extending Spatial Contrastive Pre-training Beyond Pairwise Relations</strong> has been accepted as a <strong>VisCon 2026 Poster</strong> at the <strong>CVPR 2026 workshop</strong>. Several other papers are currently in preparation across <em>Video Understanding</em> and <em>LLM Privacy</em>.
+        <strong>Multi-hop Relational Contrastive Learning for Structured Visual Representation</strong> has been accepted at the <strong>CVPR 2026 VisCon workshop</strong>. Additional work is under review and in preparation in <em>agentic chart reasoning</em> and <em>privacy-aware LLMs</em>.
       </p>
     </div>
 
@@ -126,7 +126,7 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
     {% else %}
       <div class="publication-placeholder" style="padding: 1.5rem; background-color: var(--global-card-bg-color); border-left: 3px solid var(--global-theme-color); border-radius: 0.25rem;">
         <p style="margin: 0; font-size: 0.95rem; line-height: 1.6;">
-          <strong>Several manuscripts are in preparation</strong> regarding <em>Video Understanding</em> and <em>LLM Privacy</em>. Please check back soon for updates.
+          <strong>Several manuscripts are in preparation</strong> across <em>structured visual representation</em>, <em>agentic chart reasoning</em>, and <em>privacy-aware LLM design</em>. Please check back soon for updates.
         </p>
       </div>
     {% endif %}
@@ -165,7 +165,7 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
         {% endfor %}
       </div>
     {% else %}
-      <p class="text-muted">Coming soon...</p>
+      <p class="text-muted">Projects are listed in the CV data and on the projects page.</p>
     {% endif %}
   </div>
 </section>
@@ -226,11 +226,9 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
                 {% endif %}
                 {% if content.courses and content.courses.size > 0 %}
                   <div class="ml-1 ml-md-4 mt-2">
-                    <p class="mb-2"><strong>Scholarships & Achievements:</strong></p>
-                    <p class="mb-3" style="color: var(--global-text-color); font-size: 0.9rem;">{{ content.courses[0] }}</p>
                     <p class="mb-2"><strong>Relevant Coursework:</strong></p>
                     <ul class="coursework-list" style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0;">
-                      {% for item in content.courses offset:1 %}
+                      {% for item in content.courses %}
                         <li style="color: var(--global-text-color); font-size: 0.9rem; margin-bottom: 0.25rem;">{{ item }}</li>
                       {% endfor %}
                     </ul>
@@ -258,3 +256,7 @@ I am a CS undergraduate student at **[United International University (UIU)](htt
     </p>
   </div>
 </section>
+
+<div style="margin-top: 1.5rem; padding-top: 0.75rem; font-size: 0.85rem; color: var(--global-text-color-light); opacity: 0.75; text-align: center;">
+  Last updated: 5th August, 2026
+</div>
