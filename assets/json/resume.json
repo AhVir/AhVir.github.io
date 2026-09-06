@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Sheikh Tanvir Ahmed",
-    "label": "Software Engineer | AI Systems | Research",
+    "label": "Software Engineer | AI Researcher | Distributed Systems",
     "image": "",
     "email": "shkhtanvirahmed@gmail.com",
     "phone": "+8801643631514",
@@ -34,18 +34,41 @@
   },
   "work": [
     {
-      "name": "Massey University, New Zealand",
-      "position": "Research Intern",
-      "url": "https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/",
-      "location": "Remote",
-      "startDate": "2026-02-01",
+      "name": "Dhaka Popular Travel IT",
+      "position": "Software Engineer",
+      "url": "https://www.linkedin.com/company/105352615/",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "2026-09-01",
       "endDate": "",
-      "summary": "CRISiS Lab, Joint Centre for Disaster Research (JCDR)",
+      "summary": "Full-time role at Dhaka Popular Travel IT, part of the Italy-based Popular Travel Group.",
       "highlights": [
-        "Conducting disaster resilience research at the Joint Centre for Disaster Research (JCDR), Massey University.",
-        "Performing numerical modelling of timber connectors for structural disaster resilience research.",
-        "Building and annotating sensor/digital datasets to support ML workflows in hazard analysis.",
-        "Developing computational models and data pipelines for analyzing disaster risk communication."
+        "Developing an in-house production platform for the aviation and travel technology domain.",
+        "Working across distributed systems, microservices, system design, cloud infrastructure, and DevOps.",
+        "Building with AWS, Go, Docker Swarm, distributed caching, consensus algorithms, and the Elastic Stack.",
+        "Supporting centralized logging, metrics, and observability for scalable, reliable production systems."
+      ]
+    },
+    {
+      "name": "Dhaka Popular Travel IT",
+      "position": "Software Engineer",
+      "url": "https://www.linkedin.com/company/105352615/",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "2026-05-01",
+      "endDate": "2026-08-01",
+      "summary": "Part-time role supporting software development for the aviation and travel technology domain.",
+      "highlights": ["Contributed to the development of an in-house production platform for the aviation and travel technology domain."]
+    },
+    {
+      "name": "Samsung R&D Institute Bangladesh",
+      "position": "AI & Software Engineering Intern",
+      "url": "https://www.linkedin.com/company/95713647/",
+      "location": "Dhaka, Bangladesh",
+      "startDate": "2026-03-01",
+      "endDate": "2026-08-01",
+      "summary": "Completed a full-time internship focused on AI and software engineering.",
+      "highlights": [
+        "Worked on AI and software engineering initiatives at Samsung R&D Institute Bangladesh.",
+        "Applied Python and .NET technologies in software development workflows."
       ]
     },
     {
@@ -83,6 +106,7 @@
       "startDate": "2022-10-01",
       "endDate": "2026-06-01",
       "score": "3.99/4.00",
+      "summary": "Graduated in under four years with a 3.99/4.00 CGPA and Summa Cum Laude honors.",
       "courses": [
         "Data Structure & Algorithms",
         "Artificial Intelligence",
@@ -162,6 +186,13 @@
     }
   ],
   "awards": [
+    {
+      "title": "Summa Cum Laude",
+      "date": "2026-06-01",
+      "awarder": "United International University",
+      "url": "https://www.uiu.ac.bd/",
+      "summary": "Graduated with highest honors and a 3.99/4.00 CGPA in Computer Science and Engineering."
+    },
     {
       "title": "Result-Based Merit Scholarship (In All Undergrad Trimesters)",
       "date": "2022-10-01",
