@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Software Engineer | AI Systems | Research Intern
+subtitle: Software Engineer | AI Researcher | Distributed Systems
 
 profile:
   align: right
@@ -25,13 +25,12 @@ latest_posts:
   limit: 3
 ---
 
-I am a Computer Science and Engineering student at **[United International University (UIU)](https://www.uiu.ac.bd/)** with industry experience in backend development, AI systems, and research. Currently, I am a **Research Intern** at **[CRISiS Lab, Joint Centre for Disaster Research (JCDR), Massey University](https://www.massey.ac.nz/research/research-centres/joint-centre-for-disaster-research/)** and previously served as an **Undergraduate Teaching Assistant** at UIU. My work spans disaster resilience research, numerical modelling, data pipelines, and AI-driven software systems. I also enjoy competitive programming and have solved 700+ problems across major online judges.
+I am a **Computer Science and Engineering graduate** of **[United International University (UIU)](https://www.uiu.ac.bd/)**, where I completed my degree in under four years with a **3.99/4.00 CGPA** and **Summa Cum Laude** honors. I currently work as a **Software Engineer** at **[Dhaka Popular Travel IT](https://www.linkedin.com/company/105352615/)**, part of the Italy-based Popular Travel Group. My work spans distributed systems, microservices, cloud infrastructure, DevOps, observability, backend development, and AI-driven software systems. Previously, I worked as an **AI & Software Engineering Intern** at **[Samsung R&D Institute Bangladesh](https://www.linkedin.com/company/95713647/)**. I also enjoy competitive programming and have solved hundreds of problems across major online judges.
 
 <div class="research-interests-section" style="margin-top: 1.5rem; margin-bottom: 1rem;">
   <div style="height: 2px; width: 60px; background: linear-gradient(to right, var(--global-theme-color), transparent); margin-bottom: .50rem; border-radius: 1px;"></div>
   <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--global-text-color);">Research Interests</h3>
   <ul style="list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0; line-height: 1.8;">
-    <li style="color: var(--global-text-color); font-size: 0.95rem;">Disaster Resilience Research & Numerical Modelling</li>
     <li style="color: var(--global-text-color); font-size: 0.95rem;">Computer Vision & Structured Visual Representation</li>
     <li style="color: var(--global-text-color); font-size: 0.95rem;">Large Language Models, Multimodal AI, and RAG</li>
     <li style="color: var(--global-text-color); font-size: 0.95rem;">Backend Systems, Observability, and Distributed Services</li>

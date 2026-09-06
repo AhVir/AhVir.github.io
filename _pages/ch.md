@@ -1,14 +1,14 @@
 ---
 layout: page
 permalink: /ch/
-title: Availability - Spring 2026
-description: My current availability and contact information
+title: Availability
+description: My availability and contact information
 nav: false
 ---
 
 ## Academic Journey Update
 
-I have officially **left the UGA role** to join **Samsung R&D as an Intern Engineer**. This is my **final trimester in the undergrad program**. While I no longer hold official counseling responsibilities, I remain happy to assist anyone who reaches out.
+I am currently working as a **Software Engineer** at **Dhaka Popular Travel IT** after graduating from UIU in under four years with a **3.99/4.00 CGPA** and **Summa Cum Laude** honors.
 
 ---
 
