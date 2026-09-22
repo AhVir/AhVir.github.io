@@ -25,7 +25,7 @@ latest_posts:
   limit: 3
 ---
 
-I am a **Computer Science and Engineering graduate** of **[United International University (UIU)](https://www.uiu.ac.bd/)**, where I completed my degree in under four years with a **3.99/4.00 CGPA** and **Summa Cum Laude** honors. I currently work as a **Software Engineer** at **[Dhaka Popular Travel IT](https://www.linkedin.com/company/105352615/)**, part of the Italy-based Popular Travel Group. My work spans distributed systems, microservices, cloud infrastructure, DevOps, observability, backend development, and AI-driven software systems. Previously, I worked as an **AI & Software Engineering Intern** at **[Samsung R&D Institute Bangladesh](https://www.linkedin.com/company/95713647/)**. I also enjoy competitive programming and have solved hundreds of problems across major online judges.
+I am a **Computer Science and Engineering graduate** of **[United International University (UIU)](https://www.uiu.ac.bd/)** with a **3.99/4.00 CGPA**. I currently work as a **Software Engineer** at **[Popular Travel IT](https://www.linkedin.com/company/105352615/)**, part of the Italy-based Popular Travel Group. My work spans distributed systems, microservices, cloud infrastructure, DevOps, observability, backend development, and AI-driven software systems. Previously, I worked as an **AI & Software Engineering Intern** at **[Samsung R&D Institute Bangladesh](https://www.linkedin.com/company/95713647/)**. I also enjoy competitive programming and have solved hundreds of problems across major online judges.
 
 <div class="research-interests-section" style="margin-top: 1.5rem; margin-bottom: 1rem;">
   <div style="height: 2px; width: 60px; background: linear-gradient(to right, var(--global-theme-color), transparent); margin-bottom: .50rem; border-radius: 1px;"></div>
@@ -222,6 +222,9 @@ I am a **Computer Science and Engineering graduate** of **[United International 
                       <strong>CGPA:</strong> {{ content.score }}
                     </p>
                   </div>
+                {% endif %}
+                {% if content.award %}
+                  <p class="ml-1 ml-md-4 mb-2"><strong>Award:</strong> {{ content.award }}</p>
                 {% endif %}
                 {% if content.courses and content.courses.size > 0 %}
                   <div class="ml-1 ml-md-4 mt-2">
