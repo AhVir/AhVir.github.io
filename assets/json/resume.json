@@ -34,13 +34,13 @@
   },
   "work": [
     {
-      "name": "Dhaka Popular Travel IT",
+      "name": "Popular Travel IT",
       "position": "Software Engineer",
       "url": "https://www.linkedin.com/company/105352615/",
       "location": "Dhaka, Bangladesh",
       "startDate": "2026-09-01",
       "endDate": "",
-      "summary": "Full-time role at Dhaka Popular Travel IT, part of the Italy-based Popular Travel Group.",
+      "summary": "Full-time role at Popular Travel IT, part of the Italy-based Popular Travel Group.",
       "highlights": [
         "Developing an in-house production platform for the aviation and travel technology domain.",
         "Working across distributed systems, microservices, system design, cloud infrastructure, and DevOps.",
@@ -49,7 +49,7 @@
       ]
     },
     {
-      "name": "Dhaka Popular Travel IT",
+      "name": "Popular Travel IT",
       "position": "Software Engineer",
       "url": "https://www.linkedin.com/company/105352615/",
       "location": "Dhaka, Bangladesh",
@@ -106,7 +106,8 @@
       "startDate": "2022-10-01",
       "endDate": "2026-06-01",
       "score": "3.99/4.00",
-      "summary": "Graduated in under four years with a 3.99/4.00 CGPA and Summa Cum Laude honors.",
+      "summary": "Graduated with a 3.99/4.00 CGPA.",
+      "award": "Summa Cum Laude",
       "courses": [
         "Data Structure & Algorithms",
         "Artificial Intelligence",
@@ -186,13 +187,6 @@
     }
   ],
   "awards": [
-    {
-      "title": "Summa Cum Laude",
-      "date": "2026-06-01",
-      "awarder": "United International University",
-      "url": "https://www.uiu.ac.bd/",
-      "summary": "Graduated with highest honors and a 3.99/4.00 CGPA in Computer Science and Engineering."
-    },
     {
       "title": "Result-Based Merit Scholarship (In All Undergrad Trimesters)",
       "date": "2022-10-01",

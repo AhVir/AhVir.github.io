@@ -8,7 +8,7 @@ nav: false
 
 ## Academic Journey Update
 
-I am currently working as a **Software Engineer** at **Dhaka Popular Travel IT** after graduating from UIU in under four years with a **3.99/4.00 CGPA** and **Summa Cum Laude** honors.
+I am currently working as a **Software Engineer** at **Popular Travel IT** after graduating from UIU with a **3.99/4.00 CGPA**.
 
 ---
 
